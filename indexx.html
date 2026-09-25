@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151424">
+  <meta name="description" content="FAYVI is a growing directory of Sri Lankan talent in music, film, sport and beyond.">
+  <title>FAYVI — Discover Sri Lankan talent</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#191727;background:#f7f5f2;font-synthesis:none}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}button,input{font:inherit}button{cursor:pointer}a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #b644d7;outline-offset:3px}
+    .shell{max-width:1240px;margin:auto;padding:0 32px}.top{background:#151424;color:#fff}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;font-size:28px;font-weight:950;letter-spacing:-.085em}.brand span{color:#f4b4ff}.nav-right{display:flex;gap:24px;align-items:center}.nav-right a{text-decoration:none;font-size:14px;font-weight:650;color:#e0dce6}.nav-right a:hover{color:#f4b4ff}.pill{border:1px solid #51465d;border-radius:99px;padding:9px 15px;font-size:12px;color:#d5cbdc;white-space:nowrap}
+    .intro{padding:67px 0 75px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:35px;align-items:end}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#d6a4e7;font-weight:800;font-size:12px}.intro h1{font-size:clamp(46px,7.3vw,94px);line-height:.99;letter-spacing:-.085em;max-width:780px;margin:17px 0 0;font-weight:900}.intro h1 em{font-style:normal;color:#d9a7fa}.intro p{color:#d6ceda;max-width:340px;line-height:1.65;font-size:16px;margin:0 0 5px}.stripe{height:9px;background:linear-gradient(90deg,#de9ded 0 42%,#a2b3ff 42% 73%,#f4b85f 73%)}
+    main{padding:49px 0 75px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px}.section-head h2{font-size:clamp(29px,4vw,43px);letter-spacing:-.06em;margin:0 0 7px}.section-head p{color:#696674;margin:0}.count{font-size:14px;color:#696674;font-weight:700;white-space:nowrap}
+    .toolbar{display:flex;justify-content:space-between;gap:22px;margin:29px 0 26px;align-items:center;flex-wrap:wrap}.search{min-width:min(100%,350px);max-width:460px;flex:1;position:relative}.search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);pointer-events:none}.search input{width:100%;height:48px;background:#fff;border:1px solid #dedbe0;border-radius:12px;padding:0 17px 0 48px;color:#191727}.search input::placeholder{color:#797584}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:transparent;border:1px solid #d9d5db;color:#55505e;padding:10px 15px;border-radius:99px;font-size:14px;font-weight:700}.filter:hover{background:#ece5f1}.filter.active{background:#211b30;border-color:#211b30;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{padding:0;border:1px solid #e5e0e4;background:#fff;border-radius:19px;overflow:hidden;text-align:left;color:#191727;transition:transform .2s,box-shadow .2s;min-width:0}.card:hover{transform:translateY(-4px);box-shadow:0 18px 35px #25162b18}.art{height:230px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--bg);color:var(--ink)}.art::after{content:"";position:absolute;inset:17px;border:1px solid currentColor;opacity:.25;border-radius:125px 125px 12px 12px}.initials{font-size:clamp(70px,9vw,130px);font-weight:900;letter-spacing:-.12em;line-height:1;transform:rotate(-10deg);padding-right:.1em}.art .index{position:absolute;top:19px;left:22px;font-size:12px;font-weight:900;letter-spacing:.08em}.art .mark{position:absolute;right:19px;bottom:15px;font-size:25px}.card-body{padding:20px 20px 22px}.tag{text-transform:uppercase;letter-spacing:.11em;font-size:11px;font-weight:850;color:#785183}.card h3{font-size:21px;line-height:1.14;letter-spacing:-.035em;margin:10px 0 8px}.role{font-size:14px;color:#66616e;margin:0;line-height:1.45}.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:21px;font-size:13px;font-weight:750;color:#392947}.arrow{font-size:20px;line-height:1}
+    .empty{display:none;text-align:center;background:#fff;border:1px dashed #cec5d1;border-radius:20px;padding:55px 20px}.empty strong{font-size:22px}.empty p{color:#696674}.empty button,.cta{background:#211b30;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:750}
+    .note{margin-top:31px;border-top:1px solid #ded9df;padding-top:23px;color:#6c6671;font-size:14px;line-height:1.55}.about{background:#e9e4ed;border-radius:22px;margin:65px 0 0;padding:37px 42px;display:flex;justify-content:space-between;align-items:end;gap:35px}.about h2{font-size:31px;letter-spacing:-.055em;margin:0 0 8px}.about p{margin:0;max-width:650px;line-height:1.65;color:#55505e}.about a{font-size:14px;font-weight:750;text-underline-offset:4px;white-space:nowrap}footer{background:#151424;color:#c9c1d0;padding:27px 0;font-size:13px}footer .shell{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    dialog{border:0;border-radius:22px;padding:0;width:min(550px,calc(100% - 24px));max-height:min(90vh,850px);box-shadow:0 30px 100px #10101877;color:#191727}dialog::backdrop{background:#131020a8}.detail-art{height:160px;background:var(--bg);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:100px;font-weight:900;letter-spacing:-.12em}.detail-art span{transform:rotate(-10deg)}.detail{padding:27px 32px 32px}.detail h2{font-size:34px;letter-spacing:-.055em;margin:8px 0 5px}.detail .role{font-size:16px}.detail .bio{line-height:1.65;margin:21px 0;color:#4e4955}.source{font-size:13px;color:#6d6570}.source a{color:#5b2d86;text-underline-offset:3px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.actions button{border:0;background:#211b30;color:#fff;border-radius:10px;padding:12px 17px;font-weight:750}.actions .secondary{background:#eeeaf0;color:#292331}.close{position:absolute;top:15px;right:15px;background:#fff;border:0;border-radius:99px;width:38px;height:38px;font-size:24px;line-height:1;color:#292331}
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.art{height:260px}}@media(max-width:700px){.shell{padding:0 19px}.nav{height:68px}.nav-right{gap:13px}.nav-right .pill{display:none}.intro{display:block;padding:53px 0 58px}.intro p{margin-top:23px}.toolbar{align-items:stretch}.search{max-width:none}.grid{gap:12px}.art{height:190px}.card-body{padding:15px}.card h3{font-size:18px}.about{display:block;padding:28px 24px}.about a{display:inline-block;margin-top:20px}}@media(max-width:420px){.grid{grid-template-columns:1fr}.art{height:240px}.nav-right a:first-child{display:none}.filter{padding:9px 12px}.detail{padding:22px}.detail h2{font-size:29px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+  
+    [hidden]{display:none!important}.nav-button{border:1px solid #63536f;color:#fff;background:transparent;border-radius:99px;padding:9px 15px;font-size:14px;font-weight:700}.nav-button:hover{background:#37283f}.banner{padding:14px 18px;border-radius:12px;background:#eee5f3;color:#493753;margin:0 0 22px;font-size:14px;line-height:1.6}.banner.error{background:#fde7e7;color:#8b2020}.form-stack{display:grid;gap:15px}.form-stack label,.field{display:grid;gap:6px;font-size:14px;font-weight:700}.form-stack input,.field input,.field select,.field textarea,.admin-search{font:inherit;border:1px solid #cbc4d0;border-radius:9px;padding:12px;background:white;color:#211b30;min-width:0;width:100%}.field textarea{min-height:130px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.full{grid-column:1/-1}.muted{color:#6c6374;font-size:14px;line-height:1.6}.divider{display:flex;align-items:center;gap:15px;color:#837889;font-size:13px;margin:20px 0}.divider:before,.divider:after{content:"";height:1px;background:#e0d7e5;flex:1}.wide{width:100%}.btn{border:0;border-radius:10px;padding:12px 17px;background:#211b30;color:white;font-weight:750;font-size:14px}.btn.light{background:#eee7f3;color:#3f2f4c}.btn.danger{background:#fbe7e7;color:#941e29}.btn:disabled,button:disabled{opacity:.5;cursor:wait}.link-button{border:0;background:none;color:#693593;padding:5px 0;font-size:14px;text-decoration:underline;text-underline-offset:3px}.inline-buttons{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.form-message{font-size:14px;line-height:1.6;color:#7d2525;white-space:pre-wrap}.admin{border:1px solid #d3c4df;background:#fff;border-radius:22px;padding:28px;margin-bottom:42px;scroll-margin-top:20px}.admin h2{font-size:31px;letter-spacing:-.04em;margin:0 0 8px}.admin-top{display:flex;justify-content:space-between;gap:20px;align-items:start}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.stat{padding:12px 16px;background:#f3eef6;border-radius:11px;font-size:14px}.stat strong{font-size:23px;margin-right:6px}.admin-search{margin-bottom:18px;max-width:420px}.admin-list{display:grid;gap:9px}.admin-row{display:flex;justify-content:space-between;align-items:center;gap:15px;border:1px solid #e6dfea;border-radius:12px;padding:15px}.admin-row h3{font-size:17px;margin:0 0 5px}.admin-row p{font-size:13px;color:#675d6c;margin:0}.status-tag{display:inline-block;border-radius:99px;padding:3px 8px;background:#edf4ee;color:#285439;font-size:12px;margin-left:7px}.status-tag.draft{background:#f2e9db;color:#74501c}.editor{width:min(760px,calc(100% - 24px))}.editor .detail{padding-top:35px}.detail-art{position:relative;overflow:hidden}.detail-art img,.art img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1}.photo-preview{width:80px;height:90px;object-fit:cover;border-radius:8px}.socials{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.socials a{border:1px solid #d9cede;border-radius:99px;padding:8px 12px;text-decoration:none;font-size:14px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#211b30;color:white;padding:13px 20px;border-radius:12px;box-shadow:0 5px 30px #0003;z-index:20;width:max-content;max-width:calc(100% - 30px);font-size:14px}.section-head p{line-height:1.5}.account-email{overflow-wrap:anywhere}.birthday{font-size:14px;color:#6c6374}.auth-title{margin:0 0 18px!important}.editor .actions{position:sticky;bottom:-32px;padding:15px 0;background:white}.dirty-hint{font-size:12px;color:#6c6374}.no-scroll{overflow:hidden}
+    @media(max-width:700px){.admin{padding:20px}.admin-top,.admin-row{display:block}.admin-row .inline-buttons{margin-top:13px}.admin-top .inline-buttons{margin-top:15px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.nav-right{gap:8px}.nav-button{padding:8px 11px}.nav-right a{display:none}.nav-right .pill{display:none}.editor .detail{padding:28px 21px}.admin-row .btn{padding:10px 12px}}
+
+  
+/* FAYVI directory edition */
+:root{background:#f4f5fa;color:#172035}.shell{max-width:1320px}.top{background:#11162a}.nav{height:76px}.brand{font-size:32px}.brand span{color:#c6f16c}.intro{padding:38px 0 44px;grid-template-columns:1.5fr 1fr;align-items:center}.intro h1{font-size:clamp(38px,5.4vw,67px);letter-spacing:-.065em;line-height:1.07}.intro h1 em{color:#c6f16c}.eyebrow{color:#9881d6}.intro .eyebrow{color:#c6f16c}.intro p{max-width:360px}.stripe{height:4px;background:#c6f16c}.section-head h2{font-size:34px}.toolbar{background:white;padding:17px;border:1px solid #e1e5ee;border-radius:16px;align-items:center}.filters{align-items:center;align-self:center;gap:6px}.filter{height:40px;flex:none;align-self:center;padding:8px 14px}.filter.active{background:#6145bb;border-color:#6145bb}.card{border-radius:18px;border-color:#e1e5ed}.art{height:260px}.art img{object-position:center 25%}.card-body{padding:20px}.card:hover{box-shadow:0 14px 35px #20265a1a}.tag{color:#68529e;font-size:12px}.card-foot{color:#6145bb}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.tab{border:1px solid #d9deea;border-radius:10px;background:white;padding:12px 18px;font-weight:750;color:#586074}.tab.active{background:#11162a;color:white;border-color:#11162a}.rank-note{font-size:14px;color:#626c7f;line-height:1.6;margin:0 0 20px}.leaderboard{display:grid;gap:12px}.leader{display:flex;align-items:center;gap:18px;border:1px solid #e1e5ee;background:white;padding:18px;border-radius:15px;text-align:left;width:100%;color:#172035}.leader:hover{border-color:#927cc8}.rank-number{font-size:25px;font-weight:850;width:50px;color:#7253b4}.leader-name{font-size:18px;font-weight:750;flex:1}.leader-name small{display:block;font-size:14px;color:#6e7384;margin-top:5px;font-weight:450}.score{font-size:21px;font-weight:850;color:#6145bb}.score small{font-size:12px;font-weight:500}.lookup-box{border:1px solid #ded5f1;background:#f8f5ff;padding:20px;border-radius:14px;margin:20px 0}.lookup-box h3{margin:0 0 8px}.lookup-line{display:flex;gap:10px}.lookup-line input{min-width:0;flex:1;padding:12px;border:1px solid #cabce4;border-radius:9px;font:inherit}.lookup-results{display:grid;gap:8px;margin-top:12px}.lookup-result{padding:12px;border:1px solid #ded5ee;background:white;border-radius:10px;text-align:left}.lookup-result strong{display:block;margin-bottom:4px}.lookup-result span{font-size:14px;color:#656176}.lookup-preview{margin-top:15px;line-height:1.6}.lookup-preview h4{font-size:20px;margin:0 0 8px}.lookup-preview a{color:#6145bb}.about{background:#e9eaf4}.btn,.cta,.actions button{background:#6145bb}.detail .bio{white-space:pre-line;overflow-wrap:anywhere}.source a,.socials a{overflow-wrap:anywhere}.admin{border-color:#dcd6ec}.admin h2{font-size:29px}.score-input{max-width:200px}
+dialog{box-sizing:border-box;margin:auto;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;width:min(640px,calc(100% - 28px))}dialog[open]#profileDialog{display:flex;flex-direction:column}.close{position:sticky;top:12px;right:auto;margin:12px 12px -50px auto;z-index:10;flex-shrink:0;box-shadow:0 2px 12px #0002}.detail-art{height:clamp(200px,42vh,390px);min-height:200px;flex-shrink:0;background:#161d30!important;letter-spacing:-.08em}.detail-art img{object-fit:contain;object-position:center;position:absolute;inset:0;width:100%;height:100%}.detail{flex-shrink:0}.editor{width:min(800px,calc(100% - 28px))}.editor .actions{position:static}.detail h2{line-height:1.15}.sort-control{padding:10px;border:1px solid #ddd;border-radius:9px;background:white;font:inherit;font-size:14px}.account-email{font-size:16px}.birth-label{font-size:13px;color:#7253b4;margin-top:10px}
+
+.verified-badge{display:inline-flex;align-items:center;gap:5px;background:#e8f7d2;color:#304d14;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:850;margin:8px 0}.rank-chip{display:inline-flex;align-items:center;gap:6px;background:#f0ecfb;color:#553998;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:800;margin-top:9px}.rank-chip.manual{background:#fff0d9;color:#7d4f0f}.claim-note{border:1px solid #e0d8ee;background:#faf8ff;border-radius:12px;padding:13px 15px;margin:16px 0}.creator{border:1px solid #d8e6bd;background:#fbfff5;border-radius:22px;padding:26px;margin-bottom:38px}.creator h2{margin:0 0 8px;font-size:29px}.creator-card{border:1px solid #dfe8cf;background:white;border-radius:14px;padding:17px;margin-top:14px}.creator-card h3{margin:0 0 5px}.creator-social{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:13px}.creator-social input{width:100%;min-width:0;border:1px solid #d5dcca;border-radius:9px;padding:11px;font:inherit}.claims{border-top:1px solid #e8e1ef;margin-top:25px;padding-top:22px}.claims h3{margin:0 0 12px}.claim-row{border:1px solid #e5deea;border-radius:12px;padding:14px;margin-top:9px}.claim-row strong{display:block;margin-bottom:5px}.claim-row small{display:block;color:#6b6472;line-height:1.55}.feed-list{display:grid;gap:16px;max-width:780px;margin:24px auto 0}.feed-card{border:1px solid #e1e5ee;background:white;border-radius:18px;padding:20px;box-shadow:0 8px 22px #20265a0b}.feed-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.feed-author{display:flex;gap:11px;align-items:center}.feed-avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#11162a;color:white;font-weight:850;overflow:hidden;position:relative}.feed-avatar img{width:100%;height:100%;object-fit:cover}.feed-name{font-weight:850}.feed-time{font-size:12px;color:#777d8b;margin-top:3px}.feed-text{white-space:pre-wrap;line-height:1.65;margin:17px 0 0;overflow-wrap:anywhere}.feed-media{width:100%;max-height:520px;object-fit:cover;border-radius:14px;margin-top:15px;background:#111}.feed-instagram{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid #ebddea;background:#fff9ff;border-radius:12px;padding:12px 14px;margin-top:13px;text-decoration:none}.feed-card .instagram-media{margin:15px auto 0!important;min-width:0!important;width:100%!important;max-width:540px!important}.feed-instagram span{font-size:13px;color:#746779}.feed-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.feed-actions button{border:0;background:#f0edf5;color:#3d3450;border-radius:9px;padding:9px 12px;font-weight:750}.feed-actions .danger{background:#fbe7e7;color:#941e29}.feed-empty{text-align:center;padding:45px 18px;border:1px dashed #d9dce5;border-radius:16px;color:#6b7180}.feed-composer-note{font-size:13px;color:#6b6472;line-height:1.55}.claim-code{display:grid;grid-template-columns:1fr auto;gap:9px}.claim-code input{min-width:0}.profile-meta-line{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.profile-claim-state{font-size:13px;color:#6b6472;margin-top:8px}.rank-explain{font-size:12px;color:#727889;margin-top:3px}.admin-rank{font-size:12px;color:#7253b4;margin-top:5px}.feed-admin-flag{background:#11162a;color:white;border-radius:99px;padding:3px 7px;font-size:10px;font-weight:800}.claim-status{display:inline-block;border-radius:99px;padding:3px 8px;font-size:11px;font-weight:800;background:#fff0d8;color:#815412}.claim-status.approved{background:#e8f7d2;color:#355817}.claim-status.rejected{background:#fbe7e7;color:#8d2830}
+@media(max-width:700px){.creator{padding:19px}.creator-social,.claim-code{grid-template-columns:1fr}.feed-card{padding:16px}.feed-head{align-items:flex-start}.feed-media{max-height:430px}}
+@media(max-width:700px){.intro{display:block;padding:30px 0 35px}.intro h1{font-size:43px}.intro p{margin-top:18px}.toolbar{padding:13px;gap:14px}.filters{width:100%;justify-content:flex-start}.tabs{gap:6px}.tab{padding:11px 12px;font-size:14px}.art{height:220px}.leader{gap:10px;padding:14px}.rank-number{width:35px}.leader-name{font-size:16px}.score{font-size:18px}.lookup-line{flex-wrap:wrap}.lookup-line input{flex-basis:100%}.detail-art{height:38vh;min-height:180px}.detail h2{font-size:29px}.shell{padding-left:16px;padding-right:16px}.card h3{font-size:20px}}@media(max-height:600px){.detail-art{height:210px;min-height:150px}.intro{padding:22px 0 30px}} 
+
+/* ===== FAYVI professional pink UI + light/dark themes ===== */
+:root{--page:#fff9fc;--surface:#ffffff;--surface-2:#fff1f7;--text:#241821;--muted:#786a73;--line:#eddde5;--brand:#e91e78;--brand-strong:#bd125d;--brand-soft:#ffe0ed;--header:#23131d;--shadow:0 18px 45px rgba(92,30,60,.10);color-scheme:light}
+html[data-theme="dark"]{--page:#130e12;--surface:#1e171c;--surface-2:#291b23;--text:#fff7fb;--muted:#c7b5bf;--line:#49313d;--brand:#ff5da2;--brand-strong:#ff83b7;--brand-soft:#3b1d2b;--header:#0d090c;--shadow:0 18px 45px rgba(0,0,0,.28);color-scheme:dark}
+body{background:var(--page);color:var(--text);transition:background .2s,color .2s}.top,footer{background:var(--header)}.brand span,.intro h1 em,.intro .eyebrow{color:#ff70ad}.stripe{background:linear-gradient(90deg,#ff4f9b,#ff9bc5,#fff)}
+main,.admin,.creator,.card,.leader,.feed-card,.toolbar,.lookup-result,dialog,.creator-card{color:var(--text)}.admin,.creator,.card,.leader,.feed-card,.toolbar,.lookup-result,.creator-card,dialog,.publish-card{background:var(--surface);border-color:var(--line)}.about,.lookup-box,.stat{background:var(--surface-2);color:var(--text)}.muted,.rank-note,.role,.count,.feed-time,.lookup-result span,.admin-row p,.note{color:var(--muted)}
+.btn,.cta,.actions button{background:var(--brand);color:#fff}.btn:hover,.cta:hover,.actions button:hover{background:var(--brand-strong)}.btn.light,.actions .secondary{background:var(--brand-soft);color:var(--text)}.filter.active,.tab.active{background:var(--brand);border-color:var(--brand);color:#fff}.card-foot,.score,.tag,.source a,.lookup-preview a{color:var(--brand-strong)}
+input,textarea,select,.admin-search,.lookup-line input,.creator-social input{background:var(--surface)!important;color:var(--text)!important;border-color:var(--line)!important}.theme-toggle{width:40px;height:40px;border-radius:50%;border:1px solid #634b59;background:#ffffff10;color:#fff;font-size:19px;display:grid;place-items:center}.theme-toggle:hover{background:#ffffff20}
+.admin-dashboard{box-shadow:var(--shadow);padding:0;overflow:hidden}.admin-dashboard>.admin-top{padding:28px 30px 22px;background:linear-gradient(135deg,var(--surface),var(--surface-2))}.admin-tabs{display:flex;gap:5px;padding:8px 14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);overflow-x:auto;scrollbar-width:none}.admin-tabs::-webkit-scrollbar{display:none}.admin-tab{border:0;background:transparent;color:var(--muted);padding:12px 16px;border-radius:10px;font-weight:800;white-space:nowrap}.admin-tab:hover{background:var(--surface-2);color:var(--text)}.admin-tab.active{background:var(--brand);color:white}.admin-pane{padding:27px 30px 32px}.admin-pane[hidden]{display:none!important}.pane-heading{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:20px}.pane-heading h3{font-size:23px;margin:0 0 5px}.claims{border-top:0;margin-top:0;padding-top:0}.publish-card{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.publish-card p{margin:5px 0 0}.admin-row{background:var(--surface);border-color:var(--line)}
+html[data-theme="dark"] .detail,html[data-theme="dark"] .editor .actions{background:var(--surface)}html[data-theme="dark"] .close{background:#36252e;color:#fff}html[data-theme="dark"] .verified-badge{background:#24351d;color:#c8f4a8}html[data-theme="dark"] .rank-chip{background:#36223a;color:#f4b4ff}html[data-theme="dark"] .rank-chip.manual{background:#3a2a17;color:#ffd28a}html[data-theme="dark"] .feed-actions button{background:#352830;color:#f7eaf1}
+@media(max-width:700px){.theme-toggle{width:36px;height:36px}.admin-dashboard>.admin-top,.admin-pane{padding:20px 18px}.admin-tabs{padding:7px 9px}.admin-tab{padding:10px 12px}.pane-heading,.publish-card{align-items:stretch;flex-direction:column}.pane-heading .btn,.publish-card .btn{width:100%}}
+</style>
+</head>
+<body>
+  <header class="top" id="top">
+    <nav class="shell nav" aria-label="Main navigation"><a class="brand" href="#top" aria-label="FAYVI home">FAYVI<span>✳</span></a><div class="nav-right"><a href="#discover">Discover</a><a href="#about">About</a><button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch color theme" title="Switch color theme">☾</button><button type="button" id="adminNav" class="nav-button" hidden>Dashboard</button><button type="button" id="accountNav" class="nav-button">Sign in</button></div></nav>
+    <div class="shell intro"><div><div class="eyebrow">DISCOVER · EXPLORE · CONNECT</div><h1>Sri Lankan talent.<br><em>All in one place.</em></h1></div><p>Discover the people behind the music, the screen and the moments. Explore profiles, birthdays and the FAYVI fan ranking.</p></div>
+    <div class="stripe" aria-hidden="true"></div>
+  </header>
+  <main class="shell">
+    <div id="connectionBanner" class="banner" role="status">Loading FAYVI…</div>
+    <section id="adminPanel" class="admin admin-dashboard" aria-labelledby="adminTitle" hidden>
+      <div class="admin-top"><div><div class="eyebrow">FAYVI ADMIN</div><h2 id="adminTitle">Dashboard</h2><p class="muted">Profiles, discovery, invitations and publishing — organized into separate workspaces.</p></div><div class="inline-buttons"><button type="button" class="btn" id="newProfile">+ Add profile</button></div></div>
+      <div class="admin-tabs" role="tablist" aria-label="Admin dashboard sections">
+        <button type="button" class="admin-tab active" data-admin-tab="profiles" role="tab" aria-selected="true">Profiles</button>
+        <button type="button" class="admin-tab" data-admin-tab="lookup" role="tab" aria-selected="false">Find &amp; add</button>
+        <button type="button" class="admin-tab" data-admin-tab="claims" role="tab" aria-selected="false">Invitations &amp; claims</button>
+        <button type="button" class="admin-tab" data-admin-tab="publishing" role="tab" aria-selected="false">Publishing</button>
+      </div>
+      <div class="admin-pane active" data-admin-pane="profiles">
+        <div class="pane-heading"><div><h3>Profile management</h3><p class="muted">Search, edit, publish, rank or invite the owner of any profile.</p></div></div>
+        <div class="stats" id="adminStats"></div><label class="field"><span>Find a profile</span><input id="adminSearch" class="admin-search" type="search" placeholder="Search all profiles, including drafts"></label><p id="adminMessage" class="form-message" role="status"></p><div id="adminList" class="admin-list"></div>
+      </div>
+      <div class="admin-pane" data-admin-pane="lookup" hidden>
+        <div class="pane-heading"><div><h3>Find &amp; build a profile</h3><p class="muted">Search public data, review the correct person and create a draft without retyping everything.</p></div><button type="button" class="btn light" id="importStarter">Import starter profiles</button></div>
+        <div class="lookup-box"><h3>Type a name</h3><p class="muted">Find available birthdays, professions, photos, source information and public social links. Always review imported information before publishing.</p><form id="lookupForm" class="lookup-line"><input id="lookupQuery" placeholder="For example: Chamari Athapaththu" aria-label="Person to look up" required minlength="2" maxlength="120"><button id="lookupButton" type="submit" class="btn">Find &amp; autofill</button></form><p id="lookupMessage" class="form-message" role="status"></p><div id="lookupResults" class="lookup-results"></div><div id="lookupPreview" class="lookup-preview" hidden></div></div>
+      </div>
+      <div class="admin-pane" data-admin-pane="claims" hidden>
+        <div class="pane-heading"><div><h3>Invitations &amp; claims</h3><p class="muted">Only people you personally invite can begin the creator verification process.</p></div></div>
+        <div class="claims"><h3>Private creator invitations</h3><p class="muted">Create an invitation from a profile in the Profiles tab, then send its private link to the celebrity. Links expire after 7 days and are tied to the invited email address.</p><div id="inviteAdminList"></div><h3 style="margin-top:28px">Submitted claims</h3><p class="muted">Claims appear here only after the invited person signs in with the invited email and completes the required verification steps.</p><div id="claimAdminList"></div></div>
+      </div>
+      <div class="admin-pane" data-admin-pane="publishing" hidden>
+        <div class="pane-heading"><div><h3>FAYVI publishing</h3><p class="muted">Publish official FAYVI updates. Verified celebrity feeds remain controlled by their verified owners.</p></div></div>
+        <div class="publish-card"><div><strong>Official FAYVI feed</strong><p class="muted">Create an update that appears in the public Feed tab under FAYVI.</p></div><button type="button" class="btn" id="adminPost">+ Post as FAYVI</button></div>
+      </div>
+    </section>
+    <section id="creatorPanel" class="creator" hidden aria-labelledby="creatorTitle"><div class="admin-top"><div><div class="eyebrow">VERIFIED CREATOR</div><h2 id="creatorTitle">Your FAYVI profile</h2><p class="muted">Manage your linked social account and publish to your verified feed. FAYVI administrators cannot edit or delete your feed posts.</p></div></div><div id="creatorProfiles"></div></section>
+    <section id="discover" aria-labelledby="discover-heading">
+<div class="tabs" role="group" aria-label="Directory view"><button class="tab active" data-view="discover" type="button" aria-pressed="true">Discover</button><button class="tab" data-view="rankings" type="button" aria-pressed="false">Rankings</button><button class="tab" data-view="birthdays" type="button" aria-pressed="false">Birthdays</button><button class="tab" data-view="feed" type="button" aria-pressed="false">Feed</button></div>
+<p id="viewNote" class="rank-note" hidden></p>
+      <div class="section-head"><div><h2 id="discover-heading">Discover people</h2><p>Find familiar names and discover someone new.</p></div><div><span class="count" id="count" aria-live="polite"></span> <select id="sortBy" class="sort-control" aria-label="Sort profiles"><option value="name">Name A–Z</option><option value="score">Fan votes</option><option value="newest">Recently added</option></select></div></div>
+      <div class="toolbar" id="directoryToolbar"><label class="search"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#77717e" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Search a name or profession" aria-label="Search profiles" autocomplete="off"></label><div class="filters" id="filters" role="group" aria-label="Filter by category"></div></div>
+      <div class="grid" id="grid"></div><div id="leaderboard" class="leaderboard" hidden></div><div id="feedboard" class="feed-list" hidden></div>
+      <div class="empty" id="empty"><strong>No matches yet</strong><p>Try another name or choose a different category.</p><button type="button" id="reset">Clear filters</button></div>
+      <p class="note">FAYVI is an independent directory in its early stage. Profiles link to a source for the information shown. Rankings include every published profile; they are not limited to a Top 100. Automatic positions use public-profile signals plus verified FAYVI fan votes, while an administrator can set an exact manual rank. This is a directory ranking, not an audited measure of fame or total social reach.</p>
+    </section>
+    <section class="about" id="about"><div><h2>Made for curious people.</h2><p>FAYVI brings Sri Lankan public figures and creators into one place. This first edition is small on purpose; new profiles and verified details can be added as the directory grows.</p></div><a href="#discover">Explore profiles ↑</a></section>
+  </main>
+  <footer><div class="shell"><span>© <span id="year"></span> FAYVI. Discover Sri Lankan talent.</span><span>Independent project · Early edition</span></div></footer>
+  <dialog id="profileDialog" aria-labelledby="detailName"><button class="close" type="button" id="closeDialog" aria-label="Close profile">×</button><div class="detail-art" id="detailArt"><span id="detailInitials"></span></div><div class="detail"><span class="tag" id="detailCategory"></span><h2 id="detailName"></h2><div class="profile-meta-line"><span id="detailVerified" class="verified-badge" hidden>✓ Verified profile</span><span id="detailRank" class="rank-chip" hidden></span></div><p class="role" id="detailRole"></p><p id="detailClaimState" class="profile-claim-state"></p><p class="birthday" id="detailBirthday" hidden></p><p class="bio" id="detailBio"></p><div class="socials" id="detailSocials"></div><p class="source" id="sourceLine">Profile source: <a id="detailSource" target="_blank" rel="noopener noreferrer">Visit source ↗</a></p><div class="actions"><button type="button" id="fanVote">Sign in to vote</button><button type="button" class="secondary" id="claimProfile" hidden>Creator dashboard</button><button type="button" id="share">Share profile</button><button type="button" class="secondary" id="back">Back to people</button></div><p id="voteStatus" class="muted" role="status"></p></div></dialog>
+
+  <dialog id="accountDialog" aria-labelledby="accountTitle"><button type="button" class="close" data-close="accountDialog" aria-label="Close account">×</button><div class="detail" style="padding-top:38px"><h2 id="accountTitle" class="auth-title">Welcome to FAYVI</h2>
+    <div id="signedOut"><button type="button" class="btn wide" id="googleLogin">Continue with Google</button><div class="divider">or sign in with email</div><form id="loginForm" class="form-stack"><label>Email<input id="loginEmail" type="email" autocomplete="username" required></label><label>Password<input id="loginPassword" type="password" autocomplete="current-password" required></label><button type="submit" class="btn wide" id="emailLogin">Sign in</button></form><button type="button" class="link-button" id="resetPassword">Forgot password?</button></div>
+    <div id="signedIn" hidden><p class="account-email" id="accountEmail"></p><p class="muted" id="accountRole"></p><div id="verifyGroup" hidden><p class="muted">Verify your email to enable voting and any admin access assigned to your account.</p><div class="inline-buttons"><button type="button" class="btn light" id="verifyEmail">Send verification email</button><button type="button" class="btn light" id="refreshAccount">I have verified my email</button></div></div><button type="button" class="btn light" id="linkGoogle" hidden>Link Google sign-in</button><div class="actions"><button type="button" id="openAdminFromAccount" hidden>Open dashboard</button><button type="button" class="secondary" id="logout">Sign out</button></div></div>
+    <p id="authMessage" class="form-message" role="status"></p>
+  </div></dialog>
+  <dialog id="editorDialog" class="editor" aria-labelledby="editorTitle"><button type="button" class="close" data-close="editorDialog" aria-label="Close editor">×</button><div class="detail"><h2 id="editorTitle">Add profile</h2><p class="muted">Use public, verified information. Photos should be images you have permission to use.</p>
+    <form id="profileForm"><div class="form-grid">
+      <label class="field">Name *<input name="name" maxlength="100" required></label>
+      <label class="field">Category *<select name="category" required><option>Music</option><option>Screen</option><option>Creators</option><option>Sport</option><option>Fashion</option><option>Other</option></select></label>
+      <label class="field">Profession *<input name="role" maxlength="120" placeholder="Singer · Songwriter" required></label>
+      <label class="field">Birthday (optional)<input name="birthday" type="date"></label>
+      <label class="field full">Biography *<textarea name="bio" maxlength="5000" required></textarea></label>
+      <label class="field full">Photo URL<input name="photoUrl" type="url" maxlength="2048" placeholder="https://…/photo.jpg"><span class="muted">Use a direct HTTPS image link.</span><img id="photoPreview" class="photo-preview" alt="Selected photo preview" hidden></label>
+      <label class="field full">Photo source / licence URL<input name="photoSource" type="url" maxlength="2048" placeholder="https://commons.wikimedia.org/…"><span class="muted">Keep the source page for every imported image.</span></label>
+      <label class="field full">Source URL<input name="source" type="url" maxlength="2048" placeholder="https://…"></label>
+      <label class="field">Instagram URL<input name="instagram" type="url" maxlength="2048" placeholder="https://www.instagram.com/…"></label>
+      <label class="field">YouTube URL<input name="youtube" type="url" maxlength="2048" placeholder="https://www.youtube.com/…"></label>
+      <label class="field">TikTok URL<input name="tiktok" type="url" maxlength="2048" placeholder="https://www.tiktok.com/@…"></label>
+      <label class="field">Website URL<input name="website" type="url" maxlength="2048" placeholder="https://…"></label>
+      <label class="field">Manual rank (optional)<input name="manualRank" class="score-input" type="number" min="1" step="1" placeholder="e.g. 1 or 247"><span class="muted">Leave blank for automatic ranking. Manual ranks are exact, unique and can go beyond 100.</span></label><label class="field">Automatic signal score<input name="autoScore" class="score-input" type="number" readonly value="0"><input name="wikidataSitelinks" type="hidden" value="0"><span class="muted">Calculated from linked public information and Wikidata coverage. Fan votes are added live when ordering the ranking.</span></label><label class="field full" hidden>Legacy editorial score (0–100)<input name="score" class="score-input" type="number" min="0" max="100" step="1" value="0"></label><label class="field full">Visibility<select name="status"><option value="draft">Draft — only you can see this</option><option value="published">Published — visible to everyone</option></select></label>
+    </div><p id="editorMessage" class="form-message" role="status"></p><div class="actions"><button type="submit" id="saveProfile">Save profile</button><button type="button" class="secondary" data-close="editorDialog">Cancel</button></div></form>
+  </div></dialog>
+  <dialog id="inviteDialog" aria-labelledby="inviteTitle"><button type="button" class="close" data-close="inviteDialog" aria-label="Close invite">×</button><div class="detail" style="padding-top:38px"><h2 id="inviteTitle">Invite profile owner</h2><p class="muted">Create a private, single-use claim link. Send it only to the person who owns this profile.</p><form id="inviteForm" class="form-stack"><div class="claim-note"><strong id="inviteProfileName"></strong></div><label>Celebrity email address<input id="inviteEmail" type="email" autocomplete="email" required placeholder="name@example.com"></label><label>Official/public account for your reference (optional)<input id="inviteEvidence" type="url" placeholder="https://www.instagram.com/…"></label><button type="submit" class="btn" id="createInvite">Create private invitation</button></form><div id="inviteResult" class="claim-note" hidden><strong>Private invitation link</strong><p class="muted">Copy this link and send it privately to the celebrity. Anyone with the link can open the invitation, but only the invited verified email can submit it.</p><div class="claim-code"><input id="inviteLink" readonly><button type="button" class="btn light" id="copyInvite">Copy link</button></div></div><p id="inviteMessage" class="form-message" role="status"></p></div></dialog>
+  <dialog id="claimDialog" aria-labelledby="claimTitle"><button type="button" class="close" data-close="claimDialog" aria-label="Close claim">×</button><div class="detail" style="padding-top:38px"><h2 id="claimTitle">Accept private invitation</h2><p class="muted">This profile can only be claimed through a private FAYVI administrator invitation. Sign in with the invited email, verify that email, then verify your phone number.</p><div class="claim-note"><strong id="claimProfileName"></strong><div id="claimEmailState" class="muted"></div><div id="claimPhoneState" class="muted"></div></div><form id="claimForm" class="form-stack"><label>Phone number<input id="claimPhone" type="tel" autocomplete="tel" placeholder="+94…"></label><button type="button" class="btn light" id="sendPhoneCode">Send verification code</button><div id="phoneCodeGroup" hidden><label>Verification code<div class="claim-code"><input id="claimCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="6-digit code"><button type="button" class="btn light" id="verifyPhoneCode">Verify code</button></div></label></div><p class="feed-composer-note">After both verifications are complete, your request is sent to the administrator. A verified creator feed only activates after manual approval.</p><button type="submit" class="btn" id="submitClaim">Send claim request</button></form><div id="recaptcha-container"></div><p id="claimMessage" class="form-message" role="status"></p></div></dialog>
+  <dialog id="postDialog" class="editor" aria-labelledby="postTitle"><button type="button" class="close" data-close="postDialog" aria-label="Close post editor">×</button><div class="detail"><h2 id="postTitle">Create feed post</h2><p id="postAs" class="muted"></p><form id="postForm" class="form-stack"><label>Post text<textarea id="postText" maxlength="5000" placeholder="Share an update…" required></textarea></label><label>Photo or video URL (optional)<input id="postMedia" type="url" maxlength="2048" placeholder="https://…"></label><label>Instagram post / reel URL (optional)<input id="postInstagram" type="url" maxlength="2048" placeholder="https://www.instagram.com/p/… or /reel/…"></label><p class="feed-composer-note">Instagram auto-sync requires the official Meta/Instagram API. Until that is connected, verified creators can attach a public Instagram post or reel link here and it will appear in their FAYVI feed.</p><p id="postMessage" class="form-message" role="status"></p><div class="actions"><button type="submit" id="savePost">Publish post</button><button type="button" class="secondary" data-close="postDialog">Cancel</button></div></form></div></dialog>
+  <dialog id="confirmDialog" aria-labelledby="confirmTitle"><div class="detail"><h2 id="confirmTitle">Delete profile?</h2><p id="confirmText"></p><p class="muted">This permanently deletes the profile from FAYVI.</p><p id="deleteMessage" class="form-message" role="status"></p><div class="actions"><button type="button" id="confirmDelete" style="background:#9a2530">Delete profile</button><button type="button" class="secondary" data-close="confirmDialog">Cancel</button></div></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><p class="shell">Enable JavaScript to search profiles and sign in.</p></noscript>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script type="module">
+// ===== FAYVI FIREBASE SETUP =====
+// Firebase web configuration for the FAYVI project.
+// Firebase web configuration is public. Never paste an account password here.
+const firebaseConfig = {
+  apiKey: "AIzaSyB8rRSok-98RNElRTkDtfvl4KFf_HAwSEM",
+  authDomain: "fayvi-e5dd0.firebaseapp.com",
+  projectId: "fayvi-e5dd0",
+  storageBucket: "fayvi-e5dd0.firebasestorage.app",
+  messagingSenderId: "68064038900",
+  appId: "1:68064038900:web:49e5a1dba5c53106ab73a1"
+};
+const ADMIN_EMAIL = "bonukajaniru8@gmail.com";
+// Apply the accompanying firestore.rules in Firebase before enabling this site.
+const STARTER_PROFILES = [
+      {id:"yohani",name:"Yohani",category:"Music",role:"Singer · Songwriter",bio:"Sri Lankan singer and songwriter whose music has reached audiences beyond the island. Her official site tells the story of her releases and performances.",source:"https://yohanimusic.com/bio",initials:"Y",bg:"#dfc5ed",ink:"#462456"},
+      {id:"chamari-athapaththu",name:"Chamari Athapaththu",category:"Sport",role:"Cricketer",bio:"Sri Lankan cricketer whose player profile is listed by the International Cricket Council.",source:"https://www.icc-cricket.com/rankings/58520/Chamari",initials:"CA",bg:"#b9cef9",ink:"#243a70"},
+      {id:"jacqueline-fernandez",name:"Jacqueline Fernandez",category:"Screen",role:"Actor · Model",bio:"Sri Lankan actress and model known for her work in Hindi cinema. Her film profile lists her screen career.",source:"https://lk.bookmyshow.com/person/jacqueline-fernandez/993",initials:"JF",bg:"#f4d5bd",ink:"#793a31"},
+      {id:"wanindu-hasaranga",name:"Wanindu Hasaranga",category:"Sport",role:"Cricketer",bio:"Sri Lankan cricketer with an International Cricket Council player profile.",source:"https://www.icc-cricket.com/rankings/65027/wanindu-hasaranga",initials:"WH",bg:"#c7e4d4",ink:"#285549"}
+    ];
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+const CATEGORIES = ["Music","Screen","Creators","Sport","Fashion","Other"];
+const URL_FIELDS = ["photoUrl","photoSource","source","instagram","youtube","tiktok","website"];
+const TEXT_FIELDS = ["name","category","role","birthday","bio",...URL_FIELDS,"status"];
+const PALETTES = [["#dfc5ed","#462456"],["#b9cef9","#243a70"],["#f4d5bd","#793a31"],["#c7e4d4","#285549"]];
+let publicProfiles = [], allProfiles = [], user = null, activeCategory = "All", selectedProfile = null;
+let auth, db, sdk, stopAdmin = null, editingId = null, editingVersion = null, deletingId = null;
+let fanCounts={},fanStatsReady=false;
+let directoryView="discover",lookupCandidate=null,feedPosts=[],ownedProfiles=[],myClaims=[],claimRequests=[],inviteRequests=[];
+let stopOwned=null,stopMyClaims=null,stopClaimsAdmin=null,stopInvitesAdmin=null,stopFeed=null,claimingProfile=null,activeInvite=null,invitingProfile=null,phoneConfirmation=null,recaptchaVerifier=null,postActor=null,editingPostId=null;
+let adminLoaded = false, editorDirty = false, saving = false, configured = false, toastTimer;
+function todayISO(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;}
+function isAdmin(){return !!user && user.email?.toLowerCase()===ADMIN_EMAIL && user.emailVerified===true;}
+function safeURL(value){try{const u=new URL(value);return u.protocol==="https:"&&!u.username&&!u.password?u.href:"";}catch{return "";}}
+function initials(name){return name.trim().split(/\s+/).slice(0,2).map(x=>Array.from(x)[0]||"").join("").toUpperCase();}
+function palette(p){let n=0;for(const c of p.id)n+=c.charCodeAt(0);return PALETTES[n%PALETTES.length];}
+function banner(message,error=false){$("connectionBanner").hidden=!message;$("connectionBanner").textContent=message;$("connectionBanner").classList.toggle("error",error);}
+function toast(message){clearTimeout(toastTimer);$("toast").textContent=message;$("toast").hidden=false;toastTimer=setTimeout(()=>$("toast").hidden=true,4500);}
+function showDialog(id){if(!$(id).open)$(id).showModal();}
+function setFormBusy(form,busy){form.querySelectorAll("input,textarea,select,button").forEach(e=>e.disabled=busy);}
+function errorText(error){return ({
+  "auth/invalid-credential":"The email or password is incorrect.","auth/wrong-password":"The email or password is incorrect.",
+  "auth/user-not-found":"The email or password is incorrect.","auth/invalid-email":"Enter a valid email address.",
+  "auth/popup-blocked":"Your browser blocked Google sign-in. Allow pop-ups for this site and try again.",
+  "auth/popup-closed-by-user":"Google sign-in was closed. Try again when you are ready.",
+  "auth/unauthorized-domain":"This website domain needs to be added to Firebase Authentication → Settings → Authorized domains.",
+  "auth/operation-not-allowed":"Enable this sign-in method in Firebase Authentication first.",
+  "auth/too-many-requests":"Too many attempts. Please wait before trying again.",
+  "auth/invalid-phone-number":"Enter a valid phone number in international format, for example +9477…",
+  "auth/quota-exceeded":"The SMS verification quota has been exceeded. Try again later.",
+  "auth/captcha-check-failed":"Phone verification failed the anti-abuse check. Reload and try again.",
+  "auth/invalid-verification-code":"That SMS verification code is incorrect.",
+  "auth/network-request-failed":"The connection failed. Check your internet connection and try again.",
+  "auth/account-exists-with-different-credential":"Sign in using your existing email/password, then choose Link Google sign-in in your account.",
+  "auth/requires-recent-login":"Sign out, sign in again, then retry this action.",
+  "auth/provider-already-linked":"Google is already linked to this account.",
+  "auth/credential-already-in-use":"That Google account is already linked to another account.",
+  "permission-denied":"Access denied. Check the published Firestore rules and that your admin email is verified.",
+  "unavailable":"Unable to reach the database. Check your connection and try again.",
+  "conflict":"This profile changed in another session. Close the editor and reopen it before saving.",
+  "not-found":"This profile no longer exists. Refresh the dashboard.",
+}[error.code]) || "The action could not be completed. Please try again. ("+(error.code||"connection error")+")";}
+function assertAdmin(){if(!configured||!isAdmin())throw Object.assign(new Error("Admin access required"),{code:"permission-denied"});}
+function renderFilters(){
+  const categories=["All",...CATEGORIES.filter(c=>publicProfiles.some(p=>p.category===c))];
+  if(!categories.includes(activeCategory))activeCategory="All";
+  $("filters").innerHTML=categories.map(c=>`<button type="button" class="filter ${c===activeCategory?"active":""}" aria-pressed="${c===activeCategory}" data-category="${esc(c)}">${esc(c)}</button>`).join("");
+}
+function attachImageFallbacks(root){root.querySelectorAll("img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));}
+function voteCount(id){return Number.isSafeInteger(fanCounts[id])&&fanCounts[id]>=0?fanCounts[id]:0;}
+function evidenceScore(p){let n=0;if(safeURL(p.source))n+=120;if(safeURL(p.photoUrl))n+=90;if(safeURL(p.photoSource))n+=50;if(birthdayText(p.birthday))n+=35;if((p.bio||'').trim().length>=120)n+=35;if(safeURL(p.instagram))n+=150;if(safeURL(p.youtube))n+=135;if(safeURL(p.tiktok))n+=120;if(safeURL(p.website))n+=80;n+=Math.min(200,Math.max(0,Number(p.wikidataSitelinks)||0)*4);return Math.min(1000,n);} 
+function autoSignalScore(p){const saved=Number(p.autoScore);return Number.isFinite(saved)&&saved>=0?saved:evidenceScore(p);} 
+function rankingScore(p){return autoSignalScore(p)+Math.min(voteCount(p.id),200)*3;} 
+function manualRankOf(p){const n=Number(p.manualRank);return Number.isInteger(n)&&n>0?n:0;} 
+function rankedProfiles(list=publicProfiles){const manual=list.filter(p=>manualRankOf(p)>0).sort((a,b)=>manualRankOf(a)-manualRankOf(b)||a.name.localeCompare(b.name));const reserved=new Set(manual.map(manualRankOf));const automatic=list.filter(p=>!manualRankOf(p)).sort((a,b)=>rankingScore(b)-rankingScore(a)||voteCount(b.id)-voteCount(a.id)||a.name.localeCompare(b.name));let next=1;const assigned=manual.map(p=>({p,rank:manualRankOf(p),manual:true}));for(const p of automatic){while(reserved.has(next))next++;assigned.push({p,rank:next,manual:false});next++;}return assigned.sort((a,b)=>a.rank-b.rank||a.p.name.localeCompare(b.p.name));}
+function rankInfo(id){return rankedProfiles().find(x=>x.p.id===id)||null;}
+function formatPostTime(ts){try{const d=ts?.toDate?ts.toDate():ts?.seconds?new Date(ts.seconds*1000):null;return d?d.toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short'}):'Just now';}catch{return 'Recently';}}
+let voteReadSequence=0;
+async function refreshVoteButton(){
+  const button=$("fanVote"),note=$("voteStatus"),id=selectedProfile?.id,sequence=++voteReadSequence;
+  if(!id)return;
+  note.textContent=fanStatsReady?`${voteCount(id)} fan ${voteCount(id)===1?'vote':'votes'}`:'Vote totals are loading.';
+  if(!user){button.disabled=false;button.textContent='Sign in to vote';return;}
+  if(!user.emailVerified){button.disabled=false;button.textContent='Verify email to vote';return;}
+  button.disabled=true;button.textContent='Checking your vote…';const uid=user.uid;
+  try{const snapshot=await sdk.getDoc(sdk.doc(db,'profiles',id,'votes',uid));if(sequence!==voteReadSequence||selectedProfile?.id!==id||user?.uid!==uid)return;button.textContent=snapshot.exists()?'♥ Voted · Remove vote':'♡ Vote for this person';button.disabled=false;}catch{if(sequence===voteReadSequence){button.textContent='Vote unavailable';note.textContent='Voting could not load. Check your connection; the owner may need to publish the updated database rules.';}}
+}
+$("fanVote").addEventListener('click',async()=>{
+  if(!user){showDialog('accountDialog');return;}
+  if(!user.emailVerified){showDialog('accountDialog');$("authMessage").textContent='Verify your email before voting.';return;}
+  const id=selectedProfile?.id,uid=user.uid;if(!id)return;const button=$("fanVote");button.disabled=true;
+  try{
+    const removed=await sdk.runTransaction(db,async transaction=>{
+      const voteRef=sdk.doc(db,'profiles',id,'votes',uid),statsRef=sdk.doc(db,'profileStats',id);
+      const [vote,stats]=await Promise.all([transaction.get(voteRef),transaction.get(statsRef)]);
+      const previous=stats.exists()?stats.data().count:0;
+      if(!Number.isSafeInteger(previous)||previous<0)throw Object.assign(new Error(),{code:'invalid-count'});
+      if(vote.exists()){if(previous<1)throw Object.assign(new Error(),{code:'invalid-count'});transaction.delete(voteRef);}
+      else transaction.set(voteRef,{createdAt:sdk.serverTimestamp()});
+      transaction.set(statsRef,{count:previous+(vote.exists()?-1:1),updatedAt:sdk.serverTimestamp()});
+      return vote.exists();
+    });toast(removed?'Your vote was removed.':'Your vote has been counted.');
+  }catch(error){toast(errorText(error));}finally{refreshVoteButton();}
+});
+
+function scoreOf(p){return rankingScore(p);} 
+function daysToBirthday(value){if(!birthdayText(value))return 9999;const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());const [,m,d]=value.split('-').map(Number);let next=new Date(today.getFullYear(),m-1,d);if(next<today)next=new Date(today.getFullYear()+1,m-1,d);return Math.round((next-today)/86400000);} 
+function renderFeed(){
+  const box=$("feedboard");
+  if(!feedPosts.length){box.innerHTML='<div class="feed-empty"><strong>No feed posts yet.</strong><p>Verified creators and FAYVI can publish updates here.</p></div>';return;}
+  box.innerHTML=feedPosts.map(post=>{const profile=publicProfiles.find(p=>p.id===post.profileId),photo=safeURL(profile?.photoUrl),mine=!!user&&post.ownerUid===user.uid;const media=safeURL(post.mediaUrl),ig=safeURL(post.instagramUrl);const isVideo=/\.(mp4|webm|mov)(\?|$)/i.test(media);return `<article class="feed-card" data-post="${esc(post.id)}"><div class="feed-head"><div class="feed-author"><div class="feed-avatar">${photo?`<img src="${esc(photo)}" alt="">`:esc(initials(post.authorName||'FAYVI'))}</div><div><div class="feed-name">${esc(post.authorName||'FAYVI')} ${post.authorType==='admin'?'<span class="feed-admin-flag">FAYVI</span>':'<span class="verified-badge" style="margin:0;padding:3px 7px">✓ Verified</span>'}</div><div class="feed-time">${esc(formatPostTime(post.createdAt))}</div></div></div></div>${post.text?`<p class="feed-text">${esc(post.text)}</p>`:''}${media?(isVideo?`<video class="feed-media" controls playsinline src="${esc(media)}"></video>`:`<img class="feed-media" src="${esc(media)}" alt="" loading="lazy" referrerpolicy="no-referrer">`):''}${ig?`<blockquote class="instagram-media" data-instgrm-permalink="${esc(ig)}" data-instgrm-version="14"><a class="feed-instagram" href="${esc(ig)}" target="_blank" rel="noopener noreferrer"><div><strong>Instagram post / reel</strong><br><span>Loading the original Instagram embed…</span></div><strong>↗</strong></a></blockquote>`:''}<div class="feed-actions"><button type="button" data-share-post="${esc(post.id)}">Share</button>${mine?`<button type="button" data-edit-post="${esc(post.id)}">Edit</button><button type="button" class="danger" data-delete-post="${esc(post.id)}">Delete</button>`:''}</div></article>`}).join('');attachImageFallbacks(box);setTimeout(()=>window.instgrm?.Embeds?.process?.(),0);
+}
+function renderPublic(){
+  renderFilters();
+  const q=$("search").value.trim().toLocaleLowerCase();
+  let result=publicProfiles.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&`${p.name} ${p.role} ${p.category}`.toLocaleLowerCase().includes(q));
+  const isFeed=directoryView==="feed";
+  if(directoryView==="birthdays")result=result.filter(p=>birthdayText(p.birthday));
+  const rankMap=new Map(rankedProfiles(result).map(x=>[x.p.id,x]));
+  const allRanks=new Map(rankedProfiles(publicProfiles).map(x=>[x.p.id,x]));
+  const sort=$("sortBy").value;
+  if(directoryView==="rankings")result.sort((a,b)=>(allRanks.get(a.id)?.rank||999999)-(allRanks.get(b.id)?.rank||999999));
+  else result.sort((a,b)=>directoryView==="birthdays"?daysToBirthday(a.birthday)-daysToBirthday(b.birthday)||a.name.localeCompare(b.name):sort==="score"?rankingScore(b)-rankingScore(a)||a.name.localeCompare(b.name):sort==="newest"?(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0)||a.name.localeCompare(b.name):a.name.localeCompare(b.name));
+  $("discover-heading").textContent=directoryView==="rankings"?"FAYVI ranking":directoryView==="birthdays"?"Upcoming birthdays":isFeed?"FAYVI feed":"Discover people";
+  $("viewNote").hidden=directoryView==="discover";
+  $("viewNote").textContent=directoryView==="rankings"?"Every published profile can receive a rank — there is no Top-100 cutoff. Automatic positions use linked public-profile signals plus verified FAYVI fan votes. An administrator can assign an exact manual rank, which is shown as Manual.":directoryView==="birthdays"?"Profiles with a recorded birthday, ordered by the next occurrence. Dates should be checked against the linked sources.":"Updates published by verified profile owners and the official FAYVI feed. Celebrity posts belong to their verified owner; the administrator cannot edit them.";
+  $("sortBy").hidden=directoryView!=="discover";$("directoryToolbar").hidden=isFeed;$("grid").hidden=directoryView==="rankings"||isFeed;$("leaderboard").hidden=directoryView!=="rankings";$("feedboard").hidden=!isFeed;
+  const allRanked=rankedProfiles(publicProfiles);
+  $("leaderboard").innerHTML=directoryView==="rankings"?result.map(p=>{const info=allRanked.find(x=>x.p.id===p.id);return `<button class="leader" data-id="${esc(p.id)}" type="button"><span class="rank-number">#${info?.rank||'—'}</span><span class="leader-name">${esc(p.name)}<small>${esc(p.category)} · ${esc(p.role)} · ${info?.manual?'Manual rank':'Automatic rank'}</small></span><span class="score">${Math.round(rankingScore(p))}<small> signal pts</small></span></button>`}).join(""):"";
+  $("grid").innerHTML=result.map(p=>{const [bg,ink]=palette(p);const photo=safeURL(p.photoUrl);return `<button type="button" class="card" data-id="${esc(p.id)}" aria-label="View ${esc(p.name)} profile"><div class="art" style="--bg:${bg};--ink:${ink}"><span class="initials">${esc(initials(p.name))}</span>${photo?`<img src="${esc(photo)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:""}<span class="mark">✳</span></div><div class="card-body"><span class="tag">${esc(p.category)}${p.claimStatus==='verified'?' · ✓ Verified':''}</span><h3>${esc(p.name)}</h3><p class="role">${esc(p.role)}</p>${directoryView==="birthdays"?`<div class="birth-label">${esc(birthdayText(p.birthday))} · ${daysToBirthday(p.birthday)===0?"Today":`in ${daysToBirthday(p.birthday)} days`}</div>`:""}<div class="card-foot"><span>View profile</span><span class="arrow" aria-hidden="true">↗</span></div></div></button>`}).join("");
+  attachImageFallbacks($("grid"));
+  $("count").textContent=isFeed?`${feedPosts.length} ${feedPosts.length===1?'post':'posts'}`:`${result.length} ${result.length===1?"profile":"profiles"}`;
+  $("empty").style.display=!isFeed&&!result.length?"block":"none";if(isFeed)renderFeed();
+  $("empty").querySelector("strong").textContent=publicProfiles.length?"No matches yet":"No published profiles yet";
+  $("empty").querySelector("p").textContent=publicProfiles.length?"Try another name or category.":"New profiles will appear here once they are published.";
+  $("reset").hidden=!publicProfiles.length;
+  if(!result.length&&directoryView!=="discover"&&!isFeed){$("empty").querySelector("strong").textContent=directoryView==="rankings"?"No ranked profiles match":"No birthdays match";$("empty").querySelector("p").textContent=directoryView==="rankings"?"Try another category.":"Try another category or return to Discover.";}
+  if(selectedProfile&&$("profileDialog").open){const current=publicProfiles.find(p=>p.id===selectedProfile.id);if(current)openProfile(current.id,false);else closeProfile();}
+}
+function birthdayText(value){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(value||""))return "";
+  const [y,m,d]=value.split("-").map(Number), date=new Date(Date.UTC(y,m-1,d));
+  if(date.getUTCFullYear()!==y||date.getUTCMonth()!==m-1||date.getUTCDate()!==d)return "";
+  return "Birthday: "+date.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
+}
+function openProfile(id,updateURL=true){
+  const p=publicProfiles.find(x=>x.id===id);if(!p)return;
+  selectedProfile=p;const [bg,ink]=palette(p);$("detailArt").style.cssText=`--bg:${bg};--ink:${ink}`;
+  const photo=safeURL(p.photoUrl);$("detailArt").innerHTML=`<span>${esc(initials(p.name))}</span>${photo?`<img src="${esc(photo)}" alt="${esc(p.name)}" referrerpolicy="no-referrer">`:""}`;
+  attachImageFallbacks($("detailArt"));
+  $("detailCategory").textContent=p.category;$("detailName").textContent=p.name;$("detailRole").textContent=p.role;$("detailBio").textContent=p.bio;
+  const ri=rankInfo(p.id);$("detailVerified").hidden=p.claimStatus!=="verified";$("detailRank").hidden=!ri;$("detailRank").textContent=ri?`#${ri.rank} · ${ri.manual?'Manual':'Automatic'} rank`:'';$("detailRank").classList.toggle('manual',!!ri?.manual);
+  const own=!!user&&p.ownerUid===user.uid&&p.claimStatus==='verified';$("detailClaimState").textContent=own?'You are the verified owner of this profile.':p.claimStatus==='verified'?'This profile has been claimed and verified.':'';$("claimProfile").hidden=!own;$("claimProfile").textContent='Open creator dashboard';$("claimProfile").disabled=false;
+  $("detailBirthday").textContent=birthdayText(p.birthday);$("detailBirthday").hidden=!$("detailBirthday").textContent;
+  $("sourceLine").hidden=!safeURL(p.source);$("detailSource").href=safeURL(p.source)||"#";
+  $("detailSocials").innerHTML=[['instagram','Instagram'],['youtube','YouTube'],['tiktok','TikTok'],['website','Website']].filter(([key])=>safeURL(p[key])).map(([key,label])=>`<a href="${esc(safeURL(p[key]))}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join("");
+  showDialog("profileDialog");refreshVoteButton();if(updateURL)history.replaceState(null,"",`#profile/${encodeURIComponent(p.id)}`);
+}
+function closeProfile(){$("profileDialog").close();selectedProfile=null;if(location.hash.startsWith("#profile/"))history.replaceState(null,"","#discover");}
+function profileFromHash(){if(location.hash.startsWith("#profile/")){try{openProfile(decodeURIComponent(location.hash.slice(9)),false)}catch{}}}
+function renderAccount(){
+  $("signedOut").hidden=!!user;$("signedIn").hidden=!user;$("accountNav").textContent=user?"Account":"Sign in";
+  $("accountEmail").textContent=user?.email||"";$("accountRole").textContent=isAdmin()?"Administrator":ownedProfiles.length?"Verified profile owner":user?.email?.toLowerCase()===ADMIN_EMAIL?"Admin email awaiting verification":"Signed in as a visitor. Verified profile owners can claim and publish to their own feed.";
+  $("verifyGroup").hidden=!user||user.emailVerified;
+  $("linkGoogle").hidden=!isAdmin()||user.providerData.some(p=>p.providerId==="google.com");
+  $("adminNav").hidden=!isAdmin();$("openAdminFromAccount").hidden=!isAdmin();
+}
+function openDashboard(){if(!isAdmin())return;$("accountDialog").close();$("adminPanel").hidden=false;$("adminPanel").scrollIntoView({behavior:"smooth"});}
+function renderAdmin(){
+  if(!isAdmin())return;
+  const published=allProfiles.filter(p=>p.status==="published").length;
+  $("adminStats").innerHTML=`<span class="stat"><strong>${allProfiles.length}</strong>Total</span><span class="stat"><strong>${published}</strong>Published</span><span class="stat"><strong>${allProfiles.length-published}</strong>Drafts</span>`;
+  const q=$("adminSearch").value.trim().toLocaleLowerCase();
+  const rows=allProfiles.filter(p=>`${p.name} ${p.category} ${p.status}`.toLocaleLowerCase().includes(q));
+  const publicRankMap=new Map(rankedProfiles(publicProfiles).map(x=>[x.p.id,x]));
+  $("adminList").innerHTML=rows.map(p=>{const info=publicRankMap.get(p.id),mr=manualRankOf(p);return `<article class="admin-row"><div><h3>${esc(p.name)}<span class="status-tag ${p.status==="draft"?"draft":""}">${esc(p.status)}</span>${p.claimStatus==='verified'?'<span class="status-tag">verified owner</span>':''}</h3><p>${esc(p.category)} · ${esc(p.role)}</p><div class="admin-rank">${p.status==='published'?(mr?`Manual #${mr}`:`Automatic ${info?`#${info.rank}`:'rank'}`):mr?`Manual #${mr} reserved while draft`:'Automatic ranking when published'} · signal ${Math.round(rankingScore(p))}</div></div><div class="inline-buttons"><button type="button" class="btn light" data-invite="${esc(p.id)}">Invite owner</button><button type="button" class="btn light" data-edit="${esc(p.id)}">Edit</button><button type="button" class="btn light" data-toggle="${esc(p.id)}">${p.status==="published"?"Unpublish":"Publish"}</button><button type="button" class="btn danger" data-delete="${esc(p.id)}">Delete</button></div></article>`}).join("")||`<p class="muted">${adminLoaded?(allProfiles.length?"No profiles match your search.":"Your directory is empty. Add a profile or import the starter profiles."):"Loading your profiles…"}</p>`;
+  $("importStarter").disabled=!adminLoaded||STARTER_PROFILES.every(p=>allProfiles.some(x=>x.id===p.id));
+}
+function versionOf(p){return p?.updatedAt?`${p.updatedAt.seconds}:${p.updatedAt.nanoseconds}`:"";}
+function startAdminListener(){
+  stopAdmin?.();stopAdmin=null;allProfiles=[];adminLoaded=false;
+  $("adminMessage").textContent="";$("adminList").replaceChildren();$("adminStats").replaceChildren();
+  if(!isAdmin()){
+    $("adminPanel").hidden=true;$("editorDialog").close();$("confirmDialog").close();$("profileForm").reset();editingId=null;editorDirty=false;return;
+  }
+  renderAdmin();
+  stopAdmin=sdk.onSnapshot(sdk.collection(db,"profiles"),snap=>{
+    allProfiles=snap.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>a.name.localeCompare(b.name));adminLoaded=true;$("adminMessage").textContent="";renderAdmin();
+  },error=>{$("adminMessage").textContent=errorText(error);adminLoaded=false;$("importStarter").disabled=true;});
+}
+function refreshIdentity(nextUser){user=nextUser;renderAccount();startAdminListener();startRoleListeners();if(selectedProfile){refreshVoteButton();openProfile(selectedProfile.id,false);}}
+function editProfile(id=null){
+  try{assertAdmin()}catch(e){toast(errorText(e));return;}
+  const p=id?allProfiles.find(x=>x.id===id):null;if(id&&!p)return;
+  editingId=id;editingVersion=versionOf(p);editorDirty=false;$("profileForm").reset();$("profileForm").elements.score.value=Number.isInteger(p?.score)?p.score:0;$("profileForm").elements.manualRank.value=manualRankOf(p)||"";$("profileForm").elements.wikidataSitelinks.value=Number(p?.wikidataSitelinks)||0;$("profileForm").elements.autoScore.value=Math.round(autoSignalScore(p||{}));
+  TEXT_FIELDS.forEach(key=>{$("profileForm").elements.namedItem(key).value=p?.[key]||(key==="category"?"Music":key==="status"?"draft":"")});
+  $("editorTitle").textContent=p?"Edit profile":"Add profile";$("editorMessage").textContent="";updatePhotoPreview();showDialog("editorDialog");
+}
+function updatePhotoPreview(){const img=$("photoPreview"),url=safeURL($("profileForm").elements.photoUrl.value);img.hidden=!url;img.onload=()=>img.hidden=false;img.onerror=()=>img.hidden=true;if(url)img.src=url;else img.removeAttribute("src");}
+function validateProfile(data){
+  if(!Number.isInteger(data.score)||data.score<0||data.score>100)throw new Error("Editorial score must be a whole number from 0 to 100.");
+  if(data.manualRank!==0&&(!Number.isInteger(data.manualRank)||data.manualRank<1))throw new Error("Manual rank must be a positive whole number or left blank.");
+  if(data.manualRank&&allProfiles.some(p=>p.id!==editingId&&manualRankOf(p)===data.manualRank))throw new Error("That manual rank is already assigned to another profile. Choose a different rank.");
+  if(!data.name||!data.role||!data.bio)throw new Error("Name, profession and biography are required.");
+  if(!CATEGORIES.includes(data.category))throw new Error("Choose a valid category.");
+  for(const key of URL_FIELDS){if(data[key]&&!safeURL(data[key]))throw new Error("All links must be valid HTTPS URLs without embedded credentials.");}
+  if(data.birthday){if(!birthdayText(data.birthday)||data.birthday>todayISO())throw new Error("Enter a valid birthday that is not in the future.");}
+}
+async function saveProfile(event){
+  event.preventDefault();if(saving)return;
+  const form=$("profileForm"),data=Object.fromEntries(TEXT_FIELDS.map(key=>[key,form.elements.namedItem(key).value.trim()]));
+  data.score=Number(form.elements.score.value);data.manualRank=form.elements.manualRank.value.trim()?Number(form.elements.manualRank.value):0;data.wikidataSitelinks=Number(form.elements.wikidataSitelinks.value)||0;data.autoScore=evidenceScore(data);form.elements.autoScore.value=data.autoScore;
+  try{assertAdmin();validateProfile(data)}catch(e){$("editorMessage").textContent=e.code?errorText(e):e.message;return;}
+  const targetId=editingId,expected=editingVersion;setFormBusy(form,true);saving=true;$("editorMessage").textContent="Saving to FAYVI…";
+  try{
+    if(targetId){await sdk.runTransaction(db,async transaction=>{
+      const ref=sdk.doc(db,"profiles",targetId),snap=await transaction.get(ref);
+      if(!snap.exists())throw Object.assign(new Error(),{code:"not-found"});
+      if(versionOf(snap.data())!==expected)throw Object.assign(new Error(),{code:"conflict"});
+      transaction.update(ref,{...data,updatedAt:sdk.serverTimestamp()});
+    });}else await sdk.addDoc(sdk.collection(db,"profiles"),{...data,createdAt:sdk.serverTimestamp(),updatedAt:sdk.serverTimestamp()});
+    editorDirty=false;$("editorDialog").close();toast(data.status==="published"?"Profile published. It is now visible to visitors.":"Draft saved. Only the administrator can see it.");
+  }catch(e){$("editorMessage").textContent=errorText(e)}finally{saving=false;setFormBusy(form,false);}
+}
+function closeEditor(){if(saving)return;if(editorDirty&&!confirm("Discard your unsaved profile changes?"))return;editorDirty=false;$("editorDialog").close();}
+async function toggleProfile(id,button){
+  try{assertAdmin();const p=allProfiles.find(x=>x.id===id);if(!p)return;button.disabled=true;const status=p.status==="published"?"draft":"published";await sdk.updateDoc(sdk.doc(db,"profiles",id),{status,updatedAt:sdk.serverTimestamp()});toast(status==="published"?"Profile published.":"Profile moved to drafts.");}catch(e){toast(errorText(e))}finally{button.disabled=false;}
+}
+function renderInvitesAdmin(){
+  const box=$("inviteAdminList");if(!box||!isAdmin())return;const items=[...inviteRequests].sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));box.innerHTML=items.length?items.map(i=>`<div class="claim-row"><strong>${esc(i.profileName||i.profileId)} <span class="claim-status ${esc(i.status||'active')}">${esc(i.status||'active')}</span></strong><small>Invited: ${esc(i.email||'')} · expires ${i.expiresAt?.toDate?esc(i.expiresAt.toDate().toLocaleString()):'—'}</small>${i.status==='active'?`<div class="inline-buttons" style="margin-top:10px"><button class="btn light" data-copy-invite="${esc(i.id)}">Copy link</button><button class="btn danger" data-revoke-invite="${esc(i.id)}">Revoke</button></div>`:''}</div>`).join(''):'<p class="muted">No private invitations yet.</p>';
+}
+function renderClaimsAdmin(){
+  const box=$("claimAdminList");if(!isAdmin()){box.replaceChildren();return;}const items=[...claimRequests].sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));box.innerHTML=items.length?items.map(c=>`<div class="claim-row"><strong>${esc(c.profileName||c.profileId)} <span class="claim-status ${esc(c.status||'pending')}">${esc(c.status||'pending')}</span></strong><small>${esc(c.email||'')} · ${esc(c.phone||'')}<br>Evidence: ${safeURL(c.evidence)?`<a href="${esc(safeURL(c.evidence))}" target="_blank" rel="noopener noreferrer">open ↗</a>`:'not supplied'}</small>${c.status==='pending'?`<div class="inline-buttons" style="margin-top:10px"><button class="btn" data-approve-claim="${esc(c.id)}">Approve claim</button><button class="btn danger" data-reject-claim="${esc(c.id)}">Reject</button></div>`:''}</div>`).join(''):'<p class="muted">No claim requests yet.</p>';
+}
+function renderCreatorPanel(){
+  const panel=$("creatorPanel"),box=$("creatorProfiles");panel.hidden=!ownedProfiles.length;if(!ownedProfiles.length){box.replaceChildren();return;}box.innerHTML=ownedProfiles.map(p=>`<div class="creator-card" data-owner-profile="${esc(p.id)}"><h3>${esc(p.name)} <span class="verified-badge">✓ Verified</span></h3><p class="muted">${esc(p.role||'')}</p><div class="creator-social"><input type="url" data-instagram-input="${esc(p.id)}" value="${esc(p.instagram||'')}" placeholder="https://www.instagram.com/youraccount/"><button type="button" class="btn light" data-save-instagram="${esc(p.id)}">Save Instagram</button></div><div class="inline-buttons" style="margin-top:13px"><button type="button" class="btn" data-create-post-profile="${esc(p.id)}">+ Create feed post</button><button type="button" class="btn light" data-open-public-profile="${esc(p.id)}">View public profile</button></div></div>`).join('');
+}
+function startRoleListeners(){
+  stopOwned?.();stopMyClaims?.();stopClaimsAdmin?.();stopInvitesAdmin?.();ownedProfiles=[];myClaims=[];claimRequests=[];inviteRequests=[];renderCreatorPanel();renderClaimsAdmin();renderInvitesAdmin();if(!configured||!user)return;
+  stopOwned=sdk.onSnapshot(sdk.query(sdk.collection(db,'profiles'),sdk.where('ownerUid','==',user.uid)),snap=>{ownedProfiles=snap.docs.map(d=>({...d.data(),id:d.id})).filter(p=>p.claimStatus==='verified');renderCreatorPanel();renderAccount();if(selectedProfile)openProfile(selectedProfile.id,false);},()=>{});
+  stopMyClaims=sdk.onSnapshot(sdk.query(sdk.collection(db,'claims'),sdk.where('uid','==',user.uid)),snap=>{myClaims=snap.docs.map(d=>({...d.data(),id:d.id}));if(selectedProfile)openProfile(selectedProfile.id,false);},()=>{});
+  if(isAdmin()){stopClaimsAdmin=sdk.onSnapshot(sdk.collection(db,'claims'),snap=>{claimRequests=snap.docs.map(d=>({...d.data(),id:d.id}));renderClaimsAdmin();},()=>{$("claimAdminList").innerHTML='<p class="form-message">Claims could not load. Publish the updated Firestore rules.</p>';});stopInvitesAdmin=sdk.onSnapshot(sdk.collection(db,'claimInvites'),snap=>{inviteRequests=snap.docs.map(d=>({...d.data(),id:d.id}));renderInvitesAdmin();},()=>{$("inviteAdminList").innerHTML='<p class="form-message">Invitations could not load. Publish the updated Firestore rules.</p>';});}
+}
+function startFeedListener(){if(stopFeed)return;stopFeed=sdk.onSnapshot(sdk.query(sdk.collection(db,'feedPosts'),sdk.orderBy('createdAt','desc'),sdk.limit(100)),snap=>{feedPosts=snap.docs.map(d=>({...d.data(),id:d.id}));renderPublic();},()=>{feedPosts=[];if(directoryView==='feed')renderPublic();});}
+function refreshClaimDialog(){if(!claimingProfile||!user||!activeInvite)return;$("claimProfileName").textContent=claimingProfile.name;const emailMatch=(user.email||'').toLowerCase()===(activeInvite.email||'').toLowerCase();$("claimEmailState").textContent=!emailMatch?`✕ This invitation is for ${activeInvite.email}. You are signed in as ${user.email||'another account'}.`:user.emailVerified?`✓ Invited email verified: ${user.email}`:`Invited email is not verified yet: ${user.email}`;$("claimPhoneState").textContent=user.phoneNumber?`✓ Phone verified: ${user.phoneNumber}`:'Phone not verified yet.';$("claimPhone").value=user.phoneNumber||$("claimPhone").value||'';$("claimPhone").disabled=!!user.phoneNumber;$("sendPhoneCode").hidden=!!user.phoneNumber;$("phoneCodeGroup").hidden=true;$("submitClaim").disabled=!(emailMatch&&user.emailVerified&&user.phoneNumber);}
+async function openInviteFromURL(){const params=new URLSearchParams(location.search),token=params.get('invite');if(!token||!configured)return;try{const snap=await sdk.getDoc(sdk.doc(db,'claimInvites',token));if(!snap.exists())throw new Error('This invitation does not exist.');const inv={...snap.data(),id:snap.id};if(inv.status!=='active')throw new Error('This invitation is no longer active.');if(inv.expiresAt?.toMillis&&inv.expiresAt.toMillis()<Date.now())throw new Error('This invitation has expired. Ask the FAYVI administrator for a new one.');activeInvite=inv;claimingProfile=publicProfiles.find(p=>p.id===inv.profileId)||allProfiles.find(p=>p.id===inv.profileId)||{id:inv.profileId,name:inv.profileName};if(!user){showDialog('accountDialog');$("authMessage").textContent=`Private invitation for ${inv.profileName}. Sign in or create an account using ${inv.email}, then verify that email.`;return;}refreshClaimDialog();showDialog('claimDialog');}catch(e){toast(e.message||'This invitation could not be opened.');}}
+function beginClaim(p){if(p.ownerUid===user?.uid&&p.claimStatus==='verified')$("creatorPanel").scrollIntoView({behavior:'smooth'});}
+function openPostEditor(actor,post=null){postActor=actor;editingPostId=post?.id||null;$("postForm").reset();$("postText").value=post?.text||'';$("postMedia").value=post?.mediaUrl||'';$("postInstagram").value=post?.instagramUrl||'';$("postTitle").textContent=post?'Edit feed post':'Create feed post';$("postAs").textContent=actor.type==='admin'?'Posting as the official FAYVI feed':`Posting as ${actor.profile.name}`;$("postMessage").textContent='';showDialog('postDialog');}
+async function saveFeedPost(event){event.preventDefault();if(!user||!postActor)return;const text=$("postText").value.trim(),mediaUrl=$("postMedia").value.trim(),instagramUrl=$("postInstagram").value.trim();if(!text){$("postMessage").textContent='Write something before publishing.';return;}if(mediaUrl&&!safeURL(mediaUrl)||instagramUrl&&!safeURL(instagramUrl)){$("postMessage").textContent='Media and Instagram links must be valid HTTPS URLs.';return;}const button=$("savePost");button.disabled=true;try{const payload={text,mediaUrl,instagramUrl,updatedAt:sdk.serverTimestamp()};if(editingPostId){await sdk.updateDoc(sdk.doc(db,'feedPosts',editingPostId),payload);}else{Object.assign(payload,{ownerUid:user.uid,authorType:postActor.type,authorName:postActor.type==='admin'?'FAYVI':postActor.profile.name,profileId:postActor.type==='celebrity'?postActor.profile.id:'',createdAt:sdk.serverTimestamp()});await sdk.addDoc(sdk.collection(db,'feedPosts'),payload);}$("postDialog").close();toast(editingPostId?'Post updated.':'Post published.');}catch(e){$("postMessage").textContent=errorText(e);}finally{button.disabled=false;}}
+async function authAction(button,action){
+  if(!configured){$("authMessage").textContent="Sign-in will be available after the owner connects the FAYVI Firebase project.";return;}
+  button.disabled=true;$("authMessage").textContent="";
+  try{await action()}catch(e){$("authMessage").textContent=errorText(e)}finally{button.disabled=false;}
+}
+$("accountNav").addEventListener("click",()=>{$("authMessage").textContent="";showDialog("accountDialog")});
+$("adminNav").addEventListener("click",openDashboard);$("openAdminFromAccount").addEventListener("click",openDashboard);
+$("googleLogin").addEventListener("click",()=>authAction($("googleLogin"),async()=>{const provider=new sdk.GoogleAuthProvider();provider.setCustomParameters({prompt:"select_account"});await sdk.signInWithPopup(auth,provider);$("accountDialog").close();toast("Signed in.")}));
+$("loginForm").addEventListener("submit",event=>{event.preventDefault();authAction($("emailLogin"),async()=>{await sdk.signInWithEmailAndPassword(auth,$("loginEmail").value.trim(),$("loginPassword").value);$("loginPassword").value="";$("accountDialog").close();toast("Signed in.")})});
+$("resetPassword").addEventListener("click",()=>authAction($("resetPassword"),async()=>{if(!$("loginEmail").reportValidity()||!$("loginEmail").value)return;await sdk.sendPasswordResetEmail(auth,$("loginEmail").value.trim());$("authMessage").textContent="If an account exists for that email, a password reset link will be sent."}));
+$("verifyEmail").addEventListener("click",()=>authAction($("verifyEmail"),async()=>{await sdk.sendEmailVerification(user);$("authMessage").textContent="Verification email sent. Follow its link, then choose ‘I have verified my email’."}));
+$("refreshAccount").addEventListener("click",()=>authAction($("refreshAccount"),async()=>{await sdk.reload(user);await user.getIdToken(true);refreshIdentity(auth.currentUser);$("authMessage").textContent=user.emailVerified?"Email verified. Your account is ready.":"Your email is not verified yet. Open the link in your verification email."}));
+$("linkGoogle").addEventListener("click",()=>authAction($("linkGoogle"),async()=>{await sdk.linkWithPopup(user,new sdk.GoogleAuthProvider());refreshIdentity(auth.currentUser);$("authMessage").textContent="Google sign-in linked. You can now use either login method."}));
+$("logout").addEventListener("click",()=>authAction($("logout"),async()=>{await sdk.signOut(auth);$("accountDialog").close();toast("Signed out.")}));
+$("newProfile").addEventListener("click",()=>editProfile());$("adminSearch").addEventListener("input",renderAdmin);
+$("adminPost").addEventListener('click',()=>{if(isAdmin())openPostEditor({type:'admin'});});
+$("claimProfile").addEventListener('click',()=>{if(selectedProfile)beginClaim(selectedProfile);});
+$("claimAdminList").addEventListener('click',async event=>{const b=event.target.closest('button');if(!b)return;const id=b.dataset.approveClaim||b.dataset.rejectClaim;if(!id)return;const c=claimRequests.find(x=>x.id===id);if(!c)return;b.disabled=true;try{assertAdmin();if(b.dataset.approveClaim){await sdk.runTransaction(db,async tx=>{const claimRef=sdk.doc(db,'claims',id),profileRef=sdk.doc(db,'profiles',c.profileId),claimSnap=await tx.get(claimRef),profileSnap=await tx.get(profileRef);if(!claimSnap.exists()||!profileSnap.exists())throw Object.assign(new Error(),{code:'not-found'});if(profileSnap.data().ownerUid&&profileSnap.data().ownerUid!==c.uid)throw new Error('This profile is already claimed by another account.');tx.update(profileRef,{ownerUid:c.uid,ownerEmail:c.email,claimStatus:'verified',claimedAt:sdk.serverTimestamp(),updatedAt:sdk.serverTimestamp()});tx.update(claimRef,{status:'approved',decidedAt:sdk.serverTimestamp(),decidedBy:user.email});});toast('Claim approved. Creator feed access is now active.');}else{await sdk.updateDoc(sdk.doc(db,'claims',id),{status:'rejected',decidedAt:sdk.serverTimestamp(),decidedBy:user.email});toast('Claim rejected.');}}catch(e){toast(e.message||errorText(e));}finally{b.disabled=false;}});
+$("creatorProfiles").addEventListener('click',async event=>{const b=event.target.closest('button');if(!b)return;if(b.dataset.createPostProfile){const p=ownedProfiles.find(x=>x.id===b.dataset.createPostProfile);if(p)openPostEditor({type:'celebrity',profile:p});}if(b.dataset.openPublicProfile)openProfile(b.dataset.openPublicProfile);if(b.dataset.saveInstagram){const p=ownedProfiles.find(x=>x.id===b.dataset.saveInstagram),input=$("creatorProfiles").querySelector(`[data-instagram-input="${CSS.escape(b.dataset.saveInstagram)}"]`),url=input?.value.trim()||'';if(!p)return;if(url&&!safeURL(url)){toast('Enter a valid HTTPS Instagram URL.');return;}b.disabled=true;try{await sdk.updateDoc(sdk.doc(db,'profiles',p.id),{instagram:url,updatedAt:sdk.serverTimestamp()});toast('Instagram link updated.');}catch(e){toast(errorText(e));}finally{b.disabled=false;}}});
+$("postForm").addEventListener('submit',saveFeedPost);
+$("feedboard").addEventListener('click',async event=>{const b=event.target.closest('button');if(!b)return;const id=b.dataset.sharePost||b.dataset.editPost||b.dataset.deletePost,post=feedPosts.find(x=>x.id===id);if(!post)return;if(b.dataset.sharePost){const url=location.protocol==='file:'?'':`${location.origin}${location.pathname}${location.search}#feed`;try{if(url&&navigator.share)await navigator.share({title:`${post.authorName} on FAYVI`,text:post.text.slice(0,120),url});else if(url){await navigator.clipboard.writeText(url);toast('Feed link copied.');}else toast('Publish the website before sharing feed links.');}catch(e){if(e.name!=='AbortError')toast('Could not share this post.');}}if(b.dataset.editPost){if(post.ownerUid!==user?.uid)return;const actor=post.authorType==='admin'?{type:'admin'}:{type:'celebrity',profile:ownedProfiles.find(p=>p.id===post.profileId)};if(actor.type==='celebrity'&&!actor.profile)return;openPostEditor(actor,post);}if(b.dataset.deletePost){if(post.ownerUid!==user?.uid)return;if(!confirm('Delete this feed post?'))return;b.disabled=true;try{await sdk.deleteDoc(sdk.doc(db,'feedPosts',post.id));toast('Post deleted.');}catch(e){toast(errorText(e));}finally{b.disabled=false;}}});
+$("sendPhoneCode").addEventListener('click',async()=>{if(!user||user.phoneNumber)return;const phone=$("claimPhone").value.trim();if(!/^\+[1-9]\d{7,14}$/.test(phone)){$("claimMessage").textContent='Enter the phone in international format, for example +9477…';return;}const b=$("sendPhoneCode");b.disabled=true;$("claimMessage").textContent='Sending verification code…';try{if(recaptchaVerifier){try{recaptchaVerifier.clear();}catch{}}recaptchaVerifier=new sdk.RecaptchaVerifier(auth,'recaptcha-container',{size:'invisible'});phoneConfirmation=await sdk.linkWithPhoneNumber(user,phone,recaptchaVerifier);$("phoneCodeGroup").hidden=false;$("claimMessage").textContent='Code sent. Enter the SMS code below.';}catch(e){$("claimMessage").textContent=errorText(e);}finally{b.disabled=false;}});
+$("verifyPhoneCode").addEventListener('click',async()=>{if(!phoneConfirmation)return;const code=$("claimCode").value.trim(),b=$("verifyPhoneCode");b.disabled=true;try{await phoneConfirmation.confirm(code);await sdk.reload(user);await user.getIdToken(true);user=auth.currentUser;phoneConfirmation=null;refreshClaimDialog();$("claimMessage").textContent='Phone verified.';}catch(e){$("claimMessage").textContent=e.code==='auth/invalid-verification-code'?'That SMS code is incorrect.':errorText(e);}finally{b.disabled=false;}});
+$("claimForm").addEventListener('submit',async event=>{event.preventDefault();if(!user||!claimingProfile||!activeInvite)return;await sdk.reload(user);user=auth.currentUser;const emailMatch=(user.email||'').toLowerCase()===(activeInvite.email||'').toLowerCase();if(!emailMatch||!user.emailVerified||!user.phoneNumber){refreshClaimDialog();$("claimMessage").textContent='You must use the invited email and verify both that email and your phone.';return;}const b=$("submitClaim");b.disabled=true;try{const id=`${claimingProfile.id}_${user.uid}`;await sdk.runTransaction(db,async tx=>{const inviteRef=sdk.doc(db,'claimInvites',activeInvite.id),claimRef=sdk.doc(db,'claims',id),invSnap=await tx.get(inviteRef);if(!invSnap.exists())throw new Error('Invitation not found.');const inv=invSnap.data();if(inv.status!=='active')throw new Error('This invitation is no longer active.');if(inv.expiresAt?.toMillis&&inv.expiresAt.toMillis()<Date.now())throw new Error('This invitation has expired.');tx.set(claimRef,{inviteId:activeInvite.id,profileId:claimingProfile.id,profileName:claimingProfile.name,uid:user.uid,email:user.email||'',phone:user.phoneNumber,evidence:inv.evidence||'',status:'pending',createdAt:sdk.serverTimestamp(),updatedAt:sdk.serverTimestamp()});tx.update(inviteRef,{status:'submitted',claimedByUid:user.uid,submittedAt:sdk.serverTimestamp()});});$("claimDialog").close();toast('Claim sent for administrator approval.');}catch(e){$("claimMessage").textContent=e.message||errorText(e);}finally{b.disabled=false;}});
+
+$("inviteForm").addEventListener('submit',async event=>{event.preventDefault();if(!invitingProfile)return;const email=$("inviteEmail").value.trim().toLowerCase(),evidence=$("inviteEvidence").value.trim();if(!/^\S+@\S+\.\S+$/.test(email)){$("inviteMessage").textContent='Enter a valid email address.';return;}if(evidence&&!safeURL(evidence)){$("inviteMessage").textContent='Reference link must be a valid HTTPS URL.';return;}const b=$("createInvite");b.disabled=true;try{assertAdmin();const bytes=new Uint8Array(24);crypto.getRandomValues(bytes);const token=Array.from(bytes,x=>x.toString(16).padStart(2,'0')).join('');const expires=new Date(Date.now()+7*24*60*60*1000);await sdk.setDoc(sdk.doc(db,'claimInvites',token),{profileId:invitingProfile.id,profileName:invitingProfile.name,email,evidence,status:'active',createdBy:user.uid,createdByEmail:user.email||'',createdAt:sdk.serverTimestamp(),expiresAt:sdk.Timestamp.fromDate(expires)});const url=`${location.origin}${location.pathname}?invite=${encodeURIComponent(token)}`;$("inviteLink").value=url;$("inviteResult").hidden=false;$("inviteMessage").textContent='Invitation created. It expires in 7 days.';}catch(e){$("inviteMessage").textContent=e.message||errorText(e);}finally{b.disabled=false;}});
+$("copyInvite").addEventListener('click',async()=>{const value=$("inviteLink").value;if(!value)return;try{await navigator.clipboard.writeText(value);toast('Private invitation link copied.');}catch{prompt('Copy this private invitation link:',value);}});
+$("inviteAdminList").addEventListener('click',async event=>{const b=event.target.closest('button');if(!b)return;const id=b.dataset.copyInvite||b.dataset.revokeInvite,inv=inviteRequests.find(x=>x.id===id);if(!inv)return;if(b.dataset.copyInvite){const url=`${location.origin}${location.pathname}?invite=${encodeURIComponent(id)}`;try{await navigator.clipboard.writeText(url);toast('Private invitation link copied.');}catch{prompt('Copy this private invitation link:',url);}}else{b.disabled=true;try{await sdk.updateDoc(sdk.doc(db,'claimInvites',id),{status:'revoked',revokedAt:sdk.serverTimestamp()});toast('Invitation revoked.');}catch(e){toast(errorText(e));}finally{b.disabled=false;}}});
+$("profileForm").addEventListener("input",()=>{editorDirty=true;const f=$("profileForm"),draft=Object.fromEntries(TEXT_FIELDS.map(k=>[k,f.elements.namedItem(k).value.trim()]));draft.wikidataSitelinks=Number(f.elements.wikidataSitelinks.value)||0;f.elements.autoScore.value=evidenceScore(draft);});$("profileForm").addEventListener("change",()=>editorDirty=true);$("profileForm").addEventListener("submit",saveProfile);
+$("profileForm").elements.photoUrl.addEventListener("change",updatePhotoPreview);
+$("editorDialog").addEventListener("cancel",e=>{e.preventDefault();closeEditor()});
+window.addEventListener("beforeunload",e=>{if(editorDirty){e.preventDefault();e.returnValue="";}});
+$("adminList").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.invite){invitingProfile=allProfiles.find(x=>x.id===b.dataset.invite);if(invitingProfile){$("inviteProfileName").textContent=invitingProfile.name;$("inviteEmail").value="";$("inviteEvidence").value=invitingProfile.instagram||"";$("inviteResult").hidden=true;$("inviteMessage").textContent="";showDialog("inviteDialog");}}if(b.dataset.edit)editProfile(b.dataset.edit);if(b.dataset.toggle)toggleProfile(b.dataset.toggle,b);if(b.dataset.delete){deletingId=b.dataset.delete;const p=allProfiles.find(x=>x.id===deletingId);$("confirmText").textContent=`Delete ${p?.name||"this profile"}?`;$("deleteMessage").textContent="";showDialog("confirmDialog")}});
+$("confirmDelete").addEventListener("click",async()=>{const b=$("confirmDelete");try{assertAdmin();b.disabled=true;await sdk.deleteDoc(sdk.doc(db,"profiles",deletingId));$("confirmDialog").close();toast("Profile deleted.")}catch(e){$("deleteMessage").textContent=errorText(e)}finally{b.disabled=false;}});
+$("importStarter").addEventListener("click",async()=>{
+  const b=$("importStarter");try{assertAdmin();if(!adminLoaded)return;b.disabled=true;
+    await sdk.runTransaction(db,async transaction=>{
+      const refs=STARTER_PROFILES.map(p=>sdk.doc(db,"profiles",p.id));
+      const snapshots=await Promise.all(refs.map(ref=>transaction.get(ref)));
+      STARTER_PROFILES.forEach((p,i)=>{if(!snapshots[i].exists()){
+        const data=Object.fromEntries(TEXT_FIELDS.map(k=>[k,p[k]||""]));data.status="draft";data.score=0;
+        transaction.set(refs[i],{...data,createdAt:sdk.serverTimestamp(),updatedAt:sdk.serverTimestamp()});
+      }});
+    });toast("Starter profiles imported as drafts. Review them and publish when ready.");
+  }catch(e){toast(errorText(e))}finally{renderAdmin();}
+});
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>b.dataset.close==="editorDialog"?closeEditor():$(b.dataset.close).close()));
+$("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-category]");if(b){activeCategory=b.dataset.category;renderPublic()}});
+$("search").addEventListener("input",renderPublic);$("grid").addEventListener("click",e=>{const b=e.target.closest("button[data-id]");if(b)openProfile(b.dataset.id)});
+$("reset").addEventListener("click",()=>{$("search").value="";activeCategory="All";renderPublic();$("search").focus()});
+$("closeDialog").addEventListener("click",closeProfile);$("back").addEventListener("click",closeProfile);
+$("profileDialog").addEventListener("close",()=>{selectedProfile=null;if(location.hash.startsWith("#profile/"))history.replaceState(null,"","#discover")});
+$("profileDialog").addEventListener("click",e=>{if(e.target===$("profileDialog"))closeProfile()});
+$("share").addEventListener("click",async()=>{if(!selectedProfile)return;if(location.protocol==="file:"){toast("Publish the website before sharing profile links.");return;}const url=`${location.origin}${location.pathname}${location.search}#profile/${encodeURIComponent(selectedProfile.id)}`;try{if(navigator.share)await navigator.share({title:`${selectedProfile.name} | FAYVI`,url});else{await navigator.clipboard.writeText(url);toast("Profile link copied.")}}catch(e){if(e.name!=="AbortError")prompt("Copy this profile link:",url)}});
+window.addEventListener("hashchange",()=>{if(location.hash.startsWith("#profile/"))profileFromHash();else if($("profileDialog").open)$("profileDialog").close()});
+$("sortBy").addEventListener("change",renderPublic);
+document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{directoryView=button.dataset.view;if(directoryView==='feed'&&location.protocol!=='file:')history.replaceState(null,'','#feed');document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});renderPublic()}));
+$("leaderboard").addEventListener('click',event=>{const button=event.target.closest('[data-id]');if(button)openProfile(button.dataset.id)});
+async function wikiRequest(params){
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
+  try{const url=new URL('https://www.wikidata.org/w/api.php');url.search=new URLSearchParams({format:'json',origin:'*',...params});const response=await fetch(url,{signal:controller.signal,credentials:'omit'});if(!response.ok)throw new Error('Lookup service returned '+response.status);const json=await response.json();if(json.error)throw new Error(json.error.info||'Lookup failed');return json;}finally{clearTimeout(timeout);}
+}
+function claimValues(entity,property){return (entity.claims?.[property]||[]).filter(c=>c.rank!=='deprecated'&&c.mainsnak?.snaktype==='value').map(c=>c.mainsnak.datavalue?.value).filter(v=>v!==undefined);}
+async function candidateFromEntity(id){
+  const data=await wikiRequest({action:'wbgetentities',ids:id,props:'labels|descriptions|claims|sitelinks',languages:'en'}),entity=data.entities?.[id];
+  if(!entity||!claimValues(entity,'P31').some(v=>v.id==='Q5'))throw new Error('This result is not identified as a person. Choose another result.');
+  const occupationIds=claimValues(entity,'P106').map(v=>v.id).filter(Boolean).slice(0,5);
+  let roles=[];if(occupationIds.length){try{const detail=await wikiRequest({action:'wbgetentities',ids:occupationIds.join('|'),props:'labels',languages:'en'});roles=occupationIds.map(q=>detail.entities?.[q]?.labels?.en?.value).filter(Boolean);}catch{}}
+  const name=entity.labels?.en?.value||'',description=entity.descriptions?.en?.value||'',wikidataSitelinks=Object.keys(entity.sitelinks||{}).length;
+  const dates=claimValues(entity,'P569').filter(v=>v.precision===11&&v.calendarmodel?.endsWith('/Q1985727')&&/^\+\d{4}-\d{2}-\d{2}T/.test(v.time));
+  const dateSet=[...new Set(dates.map(v=>v.time.slice(1,11)))];
+  const birthday=dateSet.length===1&&birthdayText(dateSet[0])?dateSet[0]:'';
+  const role=roles.join(' · ').slice(0,120),haystack=(role+' '+description).toLowerCase();
+  const category=/cricket|athlete|football|sport|swim|tennis/.test(haystack)?'Sport':/singer|musician|rapper|composer/.test(haystack)?'Music':/actor|actress|film|director/.test(haystack)?'Screen':/youtube|creator|blogger|influencer/.test(haystack)?'Creators':/model|fashion/.test(haystack)?'Fashion':'Other';
+  const handle=property=>claimValues(entity,property).find(v=>typeof v==='string')||'';
+  const instagram=handle('P2003'),youtube=handle('P2397'),tiktok=handle('P7085'),website=claimValues(entity,'P856').find(v=>safeURL(v))||'';
+  const commons=handle('P18');const commonsFile=commons?'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(commons):'';const directPhoto=commons?'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(commons):'';
+  return {name,category,role,bio:description?name+' — '+description+'.':'',birthday,photoUrl:directPhoto,photoSource:commonsFile,source:'https://www.wikidata.org/wiki/'+id,instagram:instagram?'https://www.instagram.com/'+encodeURIComponent(instagram)+'/':'',youtube:youtube?'https://www.youtube.com/channel/'+encodeURIComponent(youtube):'',tiktok:tiktok?'https://www.tiktok.com/@'+encodeURIComponent(tiktok):'',website,status:'draft',commons:commonsFile,wikidataSitelinks,dateConflict:dateSet.length>1};
+}
+$("lookupForm").addEventListener('submit',async event=>{
+  event.preventDefault();try{assertAdmin()}catch{return;}
+  const button=$("lookupButton");button.disabled=true;lookupCandidate=null;$("lookupPreview").hidden=true;$("lookupResults").replaceChildren();$("lookupMessage").textContent='Searching Wikidata…';
+  try{const data=await wikiRequest({action:'wbsearchentities',search:$("lookupQuery").value.trim(),language:'en',uselang:'en',type:'item',limit:'6'});
+    $("lookupResults").innerHTML=(data.search||[]).filter(item=>/^Q\d+$/.test(item.id)).map(item=>`<button type="button" class="lookup-result" data-entity="${esc(item.id)}"><strong>${esc(item.label)}</strong><span>${esc(item.description||'No description available')} · ${esc(item.id)}</span></button>`).join('');
+    $("lookupMessage").textContent=data.search?.length?'Select the correct person to review their details.':'No matching entry. You can add this person manually.';
+  }catch(error){$("lookupMessage").textContent=error.name==='AbortError'?'Lookup timed out. Try again or add the person manually.':'Could not reach Wikidata. Try again or use Add profile.';}finally{button.disabled=false;}
+});
+$("lookupResults").addEventListener('click',async event=>{
+  const button=event.target.closest('[data-entity]');if(!button)return;
+  $("lookupResults").querySelectorAll('button').forEach(b=>b.disabled=true);$("lookupPreview").hidden=true;lookupCandidate=null;$("lookupMessage").textContent='Fetching public details…';
+  try{assertAdmin();const p=await candidateFromEntity(button.dataset.entity);if(!isAdmin())return;lookupCandidate=p;
+    $("lookupPreview").innerHTML=`<h4>${esc(p.name)}</h4><p>${esc(p.bio||'Biography unavailable')}</p><p><strong>Profession:</strong> ${esc(p.role||'Needs your input')}<br><strong>Birthday:</strong> ${esc(p.birthday||'Not available or not precise enough')}${p.dateConflict?' (conflicting dates; left blank)':''}<br><strong>Suggested category:</strong> ${esc(p.category)}<br><strong>Wikidata/Wikipedia coverage:</strong> ${esc(p.wikidataSitelinks)} linked pages</p><p class="muted">Check that this is the correct person and review every imported field. Wikidata can contain errors. An unavailable field stays blank.</p><p><a href="${esc(p.source)}" target="_blank" rel="noopener noreferrer">Review original Wikidata entry ↗</a>${p.commons?` · <a href="${esc(p.commons)}" target="_blank" rel="noopener noreferrer">Review photo and reuse license ↗</a>`:''}</p><button type="button" class="btn" id="useLookup">Fill a new profile with these details</button>`;
+    const socialSummary=document.createElement('p');socialSummary.className='muted';socialSummary.textContent=['instagram','youtube','tiktok','website'].map(key=>key.charAt(0).toUpperCase()+key.slice(1)+': '+(p[key]?'found':'not listed')).join(' · ');$("lookupPreview").prepend(socialSummary);
+    const existing=allProfiles.find(x=>x.source===p.source);
+    $("lookupPreview").hidden=false;$("lookupMessage").textContent=existing?'A matching profile already exists. Edit it from the dashboard to avoid a duplicate.':'Details found. The photo is imported from Wikimedia Commons when available, with its source kept separately. FAYVI calculates an automatic signal score; you can still assign an exact manual rank.';
+    if(existing)$("useLookup").disabled=true;
+  }catch(error){$("lookupMessage").textContent=error.message||'Unable to load that person.';}finally{$("lookupResults").querySelectorAll('button').forEach(b=>b.disabled=false);}
+});
+
+// Use event delegation for the dynamically-created autofill button.
+// This remains attached even when lookupPreview.innerHTML is rebuilt for a new person.
+$("lookupPreview").addEventListener("click",event=>{
+  const button=event.target.closest("#useLookup");
+  if(!button)return;
+  event.preventDefault();
+  if(button.disabled)return;
+  try{
+    assertAdmin();
+    if(!lookupCandidate)throw new Error("The lookup details are no longer available. Select the person again.");
+    const candidate={...lookupCandidate};
+    const form=$("profileForm");
+    if(!form)throw new Error("The profile editor could not be opened. Reload FAYVI and try again.");
+
+    // Prepare a genuinely new profile without relying on the normal editor's
+    // existing-profile initialization, then populate only fields that exist.
+    editingId=null;editingVersion=null;editorDirty=false;
+    form.reset();
+    TEXT_FIELDS.forEach(key=>{
+      const field=form.elements.namedItem(key);
+      if(field)field.value=candidate[key]??(key==="category"?"Other":key==="status"?"draft":"");
+    });
+    form.elements.status.value="draft";
+    form.elements.score.value="0";
+    form.elements.manualRank.value="";
+    form.elements.wikidataSitelinks.value=String(Number(candidate.wikidataSitelinks)||0);
+    form.elements.autoScore.value=String(Math.round(evidenceScore(candidate)));
+    $("editorTitle").textContent="Add profile";
+    $("editorMessage").textContent="Imported from Wikidata/Wikimedia. Review every field before saving, especially identity, ranking and photo licensing.";
+    editorDirty=true;
+    updatePhotoPreview();
+    showDialog("editorDialog");
+    // Put the user directly at the imported form, including on long admin pages.
+    setTimeout(()=>form.elements.name?.focus(),0);
+  }catch(error){
+    $("lookupMessage").textContent=error.code?errorText(error):(error.message||"Could not fill the profile. Reload FAYVI and try again.");
+    toast($("lookupMessage").textContent);
+  }
+});
+
+
+// ===== FAYVI dashboard tabs + theme =====
+(function setupProfessionalUI(){
+  const root=document.documentElement;
+  const saved=localStorage.getItem('fayvi-theme');
+  const preferred=saved || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  const applyTheme=theme=>{root.dataset.theme=theme;const b=document.getElementById('themeToggle');if(b){b.textContent=theme==='dark'?'☀':'☾';b.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');b.title=b.getAttribute('aria-label');}};
+  applyTheme(preferred);
+  document.getElementById('themeToggle')?.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('fayvi-theme',next);applyTheme(next);});
+  const tabs=[...document.querySelectorAll('[data-admin-tab]')],panes=[...document.querySelectorAll('[data-admin-pane]')];
+  function selectAdminTab(name){tabs.forEach(t=>{const on=t.dataset.adminTab===name;t.classList.toggle('active',on);t.setAttribute('aria-selected',String(on));});panes.forEach(p=>{const on=p.dataset.adminPane===name;p.hidden=!on;p.classList.toggle('active',on);});}
+  tabs.forEach(t=>t.addEventListener('click',()=>selectAdminTab(t.dataset.adminTab)));
+  window.fayviSelectAdminTab=selectAdminTab;
+})();
+
+$("year").textContent=new Date().getFullYear();
+$("profileForm").elements.birthday.max=todayISO();$("profileForm").elements.autoScore.value=0;$("profileForm").elements.wikidataSitelinks.value=0;
+window.addEventListener("offline",()=>banner("You are offline. Changes need an internet connection.",true));
+window.addEventListener("online",()=>{if(configured)banner("")});
+async function boot(){
+  if(!firebaseConfig.apiKey||!firebaseConfig.authDomain||!firebaseConfig.projectId||!firebaseConfig.appId){
+    publicProfiles=STARTER_PROFILES;renderPublic();profileFromHash();banner("Preview edition · The owner needs to connect Firebase to enable sign-in and save profiles.");return;
+  }
+  try{
+    const [appModule,authModule,dbModule]=await Promise.all([
+      import("https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js"),
+      import("https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js"),
+      import("https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js")
+    ]);
+    sdk={...authModule,...dbModule};const app=appModule.initializeApp(firebaseConfig);auth=sdk.getAuth(app);db=sdk.getFirestore(app);
+    configured=true;sdk.onAuthStateChanged(auth,refreshIdentity);startFeedListener();if(location.hash==="#feed"){directoryView="feed";document.querySelectorAll("[data-view]").forEach(b=>{b.classList.toggle("active",b.dataset.view==="feed");b.setAttribute("aria-pressed",String(b.dataset.view==="feed"));});}
+    sdk.onSnapshot(sdk.collection(db,"profileStats"),snapshot=>{fanCounts=Object.fromEntries(snapshot.docs.map(d=>[d.id,d.data().count]));fanStatsReady=true;renderPublic();},error=>{fanStatsReady=false;$("viewNote").textContent="Fan votes could not load. The owner may need to publish the updated database rules.";toast("Voting is unavailable. Check the updated Firestore rules.");});
+    sdk.onSnapshot(sdk.query(sdk.collection(db,"profiles"),sdk.where("status","==","published")),snapshot=>{
+      publicProfiles=snapshot.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>a.name.localeCompare(b.name));renderPublic();profileFromHash();banner("");if(new URLSearchParams(location.search).get("invite"))openInviteFromURL();
+    },error=>{publicProfiles=[];renderPublic();banner("Profiles could not be loaded. "+errorText(error),true);});
+  }catch(error){configured=false;banner("FAYVI could not connect. Check the Firebase configuration and your internet connection.",true);renderPublic();}
+}
+boot();
+
+  </script>
+</body>
+</html>
